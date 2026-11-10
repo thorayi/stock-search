@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>off-balance-sheet-info</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<p><strong>Most of these are real contractual spending commitments—but
+they are not all equally binding, and they are much broader than
+energy-price hedges.</strong> The disclosures include equipment
+purchases, cloud capacity, future data-center leases, investments, and
+guarantees.</p>
+<p>I checked company filings available as of <strong>November 10,
+2026</strong>. Several chart figures reconcile closely; Microsoft and
+Anthropic require more qualification. Amounts below are <strong>billions
+of US dollars</strong>.</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Company</th>
+<th style="text-align: right;">Chart’s off-balance-sheet figure</th>
+<th>What I could verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google / Alphabet</td>
+<td style="text-align: right;">$1,077</td>
+<td>$924.4 purchases + $130.5 future leases + $21.9 investment funding =
+<strong>$1,076.8</strong></td>
+</tr>
+<tr>
+<td>Meta</td>
+<td style="text-align: right;">$810</td>
+<td>$454.52 noncancelable contracts + $355.73 future leases =
+<strong>$810.25</strong></td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td style="text-align: right;">$865</td>
+<td>Latest filing reports <strong>$900.9</strong> of aggregate
+commitments, including subsequent agreements; different scope from the
+chart</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td style="text-align: right;">$575</td>
+<td>Verified substantial purchases, construction commitments and future
+leases, but <strong>couldn’t reproduce $575 precisely</strong></td>
+</tr>
+<tr>
+<td>Amazon</td>
+<td style="text-align: right;">$419</td>
+<td>$164.922 future leases + $159.640 equipment + $94.759 other
+purchases = <strong>$419.321</strong></td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td style="text-align: right;">$322</td>
+<td>$288 future leases + $34.150 purchases and other obligations =
+<strong>$322.15</strong></td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td style="text-align: right;">$422</td>
+<td>$366 of commitments + $56 of additional cloud/third-party lease
+commitments = <strong>$422</strong></td>
+</tr>
+</tbody>
+</table>
+<p>These are my arithmetic reconciliations from the disclosures
+described below—not confirmation of the chart maker’s methodology.</p>
+<p><strong>1. Google / Alphabet: supply reservations, minimum energy
+purchases, and future leases</strong></p>
+<p>Alphabet’s September 30 filing identifies infrastructure and
+inventory purchases, energy take-or-pay contracts, content licenses,
+future leases, and investment funding.</p>
+<p>The key qualification is that <strong>some supply commitments are
+reported at maximum contractual prices and volumes</strong>. Certain
+contracts permit partial volume reductions or variable prices, so the
+disclosed amount is not necessarily an unavoidable minimum.</p>
+<p>Energy agreements generally have minimum purchases and substantial
+termination fees. They run for three to 26 years, with obligations
+extending through 2054. Most purchase commitments are expected to be
+fulfilled through 2031; <strong>$213.4 billion of purchases falls due
+within 12 months</strong>. Energy agreements without fixed or minimum
+commitments are excluded.</p>
+<p><strong>Meaning:</strong> Google is securing supply and capacity, but
+that creates payment obligations. Some of the headline amount has
+contractual flexibility. <a
+href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm">Alphabet
+September 2026 filing, Notes 10 and “Future Cash Commitments”</a></p>
+<p><strong>2. Meta: explicitly noncancelable contracts, plus long-term
+leases</strong></p>
+<p>Meta’s September 30 filing gives:</p>
+<ul>
+<li><strong>$454.52 billion of noncancelable commitments:</strong>
+mostly third-party cloud capacity, servers and networks, data-center
+energy services, and Reality Labs hardware.</li>
+<li><strong>$355.73 billion of leases not yet started:</strong> data
+centers, energy infrastructure, colocations and networks. They start
+between 2026 and 2036 and last up to 30 years.</li>
+</ul>
+<p>Of the noncancelable contracts, <strong>$45.85 billion is due in the
+remainder of 2026 and $121.41 billion in 2027</strong>.</p>
+<p>Meta separately describes renewable-energy agreements where spending
+depends on actual purchases and there is no fixed minimum volume. It
+also discloses <strong>$41.49 billion of maximum residual-value
+guarantees</strong> for data-center ventures: potential payments linked
+to property value if leases end or aren’t renewed, subject to
+conditions.</p>
+<p><strong>Meaning:</strong> The $810 billion principally represents
+contracted purchases and future rent. Flexible renewable-energy
+purchasing and conditional guarantees are separate considerations. <a
+href="https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm">Meta
+September 2026 filing, Notes 5 and 10</a></p>
+<p><strong>3. Anthropic: clear examples of “pay even if you don’t use
+it”</strong></p>
+<p>Anthropic’s November 10 filing reports <strong>$900.9
+billion</strong> of aggregate compute and infrastructure commitments,
+including agreements signed after September 30. About <strong>$70.7
+billion is due within the following 12 months</strong>, with substantial
+spending extending through 2045.</p>
+<p>Its named cloud agreements include minimum spending regardless of
+usage:</p>
+<ul>
+<li><strong>Google:</strong> approximately <strong>$121.3
+billion</strong>, April 2026–July 2033.</li>
+<li><strong>Amazon:</strong> at least <strong>$110 billion</strong>, May
+2026–April 2036.</li>
+<li><strong>Microsoft:</strong> at least <strong>$47.2 billion</strong>,
+November 2026–June 2033.</li>
+</ul>
+<p>Google and Amazon agreements generally require shortfall payments if
+usage doesn’t meet the commitment, subject to adjustments and
+exceptions.</p>
+<p>However, <strong>$186.2 billion</strong> of aggregate obligations has
+exercisable termination rights or conditions before commencement, such
+as financing, facilities or regulatory approvals. Supplier delivery
+failures can also provide remedies.</p>
+<p><strong>Meaning:</strong> These include strong minimum-payment
+obligations, alongside conditional arrangements. The latest aggregate
+does not directly validate the chart’s $865 billion. <a
+href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm">Anthropic
+November 10 registration filing, “Contractual Obligations”</a></p>
+<p><strong>4. Microsoft: future data-center rent, purchases and
+construction</strong></p>
+<p>Microsoft’s June 30 annual report discloses:</p>
+<ul>
+<li><strong>$194.06 billion of purchase commitments</strong>, primarily
+data-center related, including open purchase orders and take-or-pay
+contracts.</li>
+<li><strong>$34.57 billion of construction commitments</strong>.</li>
+</ul>
+<p>Of those purchases, <strong>$169.01 billion was scheduled for fiscal
+2027</strong>. This is substantial near-term procurement, although the
+filing doesn’t quantify cancellation flexibility across every purchase
+order. <a
+href="https://www.microsoft.com/investor/reports/ar26/index.html">Microsoft
+FY2026 annual report, “Contractual Obligations”</a></p>
+<p>Its newer September 30 filing reports <strong>$364.6 billion of
+leases not yet commenced</strong>, principally data centers. They start
+during fiscal 2027–2034, run for one to 20 years, and some depend on
+contractual conditions being met. <a
+href="https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm">Microsoft
+September 2026 filing, Note 12</a></p>
+<p><strong>Meaning:</strong> These secure buildings, equipment and
+operating capacity. I couldn’t precisely reconcile $575 billion without
+the chart’s calculation and reporting-date assumptions.</p>
+<p><strong>5. Amazon: the reported purchase amounts emphasize minimum
+obligations</strong></p>
+<p>Amazon’s September 30 commitments reconcile to approximately $419
+billion:</p>
+<ul>
+<li><strong>$164.922 billion:</strong> leases not yet commenced.</li>
+<li><strong>$159.640 billion:</strong> unconditional property and
+equipment purchases.</li>
+<li><strong>$94.759 billion:</strong> unconditional purchases of energy,
+digital content and software.</li>
+</ul>
+<p>For variable contracts, Amazon generally includes only minimum
+prices, quantities or termination penalties. Energy agreements based on
+actual generation without minimum volume commitments are excluded.</p>
+<p>The table schedules approximately <strong>$21.0 billion across these
+categories for the remainder of 2026 and $86.5 billion for
+2027</strong>.</p>
+<p>Amazon separately says ordinary operating purchase orders are
+generally cancellable in full or part; these are excluded from its
+principal contractual-commitments table.</p>
+<p><strong>Meaning:</strong> The chart largely captures minimum
+contractual purchases and future rent, rather than all planned spending.
+<a
+href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm">Amazon
+September 2026 filing, Note 4</a></p>
+<p><strong>6. Oracle: predominantly long-term data-center
+rent</strong></p>
+<p>Oracle’s August 31 filing shows:</p>
+<ul>
+<li><strong>$288 billion of future leases</strong>, substantially all
+for data centers. They are expected to start during fiscal 2027–2029 and
+last <strong>15–19 years</strong>.</li>
+<li><strong>$34.15 billion of unconditional purchases and other
+obligations</strong>, mainly infrastructure components and data-center
+power.</li>
+</ul>
+<p>Oracle explicitly describes its unconditional purchase agreements as
+legally binding, with fixed or minimum quantities, pricing provisions
+and payment timing. Approximately <strong>$5.45 billion</strong> of
+these purchases is scheduled for the remainder of fiscal 2027.</p>
+<p>Oracle says it may sell excess products if it no longer expects to
+consume everything it is obligated to purchase.</p>
+<p><strong>Meaning:</strong> Oracle has committed to long-lived capacity
+and minimum purchases. Reselling surplus equipment may recover value; it
+doesn’t remove the original purchase obligation. <a
+href="https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm">Oracle
+August 2026 filing, Note 6</a></p>
+<p><strong>7. Nvidia: manufacturing supply plus support for customers’
+capacity</strong></p>
+<p>Nvidia’s July 26 filing reconciles to $422 billion:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align: right;">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply and manufacturing capacity</td>
+<td style="text-align: right;">$279</td>
+</tr>
+<tr>
+<td>Cloud services for Nvidia</td>
+<td style="text-align: right;">$29</td>
+</tr>
+<tr>
+<td>Future data-center leases</td>
+<td style="text-align: right;">$25</td>
+</tr>
+<tr>
+<td>Equity investment commitments</td>
+<td style="text-align: right;">$25</td>
+</tr>
+<tr>
+<td>Capital expenditures</td>
+<td style="text-align: right;">$8</td>
+</tr>
+<tr>
+<td>Additional AI-cloud commitments</td>
+<td style="text-align: right;">$36</td>
+</tr>
+<tr>
+<td>Future leases intended for third parties</td>
+<td style="text-align: right;">$20</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>$422</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Some supplier arrangements can be cancelled, rescheduled or adjusted
+before firm orders, potentially at additional cost. The $36 billion
+AI-cloud commitments decline as third-party customers or Nvidia use the
+capacity.</p>
+<p><strong>Separately</strong>, Nvidia disclosed an August guarantee
+capped at <strong>$105 billion</strong> supporting an OpenAI-related
+data-center project. Payments are triggered by specified tenant
+defaults; this is potential exposure, not scheduled spending included in
+the $422 billion.</p>
+<p><strong>Meaning:</strong> Nvidia combines supply reservations with
+commitments supporting customers’ infrastructure. Its exposure depends
+partly on downstream demand and customer performance. <a
+href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm">Nvidia
+July 2026 filing, Note 10</a></p>
+<p>Your original intuition is partly right: <strong>these contracts help
+lock in scarce energy, chips and computing capacity. But securing that
+supply often requires committing to minimum payments.</strong> The
+distinction that matters is whether each amount is a minimum purchase, a
+maximum contractual estimate, future rent, or a guarantee triggered only
+under certain conditions. The chart combines those differences into a
+single bar.</p>
+</body>
+</html>
