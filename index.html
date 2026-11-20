@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IPO Valuations, Inflation &amp; GDP</title>
+  <title>Trillion-Dollar IPOs: Valuation, Growth and Investor Returns</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172033; background: #f3f5f8; }
     body { margin: 0; padding: 40px 20px; }
@@ -73,41 +73,411 @@
 </head>
 <body>
 <main>
-  <h1>IPO Valuations in Economic Context</h1>
-  <p>The supplied image’s figures in <strong>today’s dollars</strong>, using October 2026 CPI—the latest available as of November 19, 2026. Amounts are approximate. <a href="https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm">Source: U.S. Bureau of Labor Statistics</a>.</p>
-  <p><strong>Today’s Valuation</strong> is each company’s reported equity market capitalization at the November 19, 2026 U.S. market close, in U.S. dollars. Each current figure links to its Stock Analysis source. This is a saved snapshot, not a live feed.</p>
+  <h1>Trillion-Dollar IPOs: Valuation, Growth and Investor Returns</h1>
+  <p>This analysis examines the growth, profitability and cash generation that could support trillion-dollar valuations for SpaceX and Anthropic. Historical IPOs, established technology companies and observed investor outcomes provide context for the potential gains and losses.</p>
+  <p class="note"><strong>Analysis updated November 20, 2026.</strong> Market values and revenue baselines use a fixed November 19, 2026 snapshot. Inflation comparisons use October 2026 CPI, and the GDP baseline is the Q3 2026 annualized reading. Scenarios are illustrative and do not assign calibrated probabilities to future stock returns. <a href="https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm">CPI source: BLS</a>.</p>
+  <p><strong>Snapshot valuation</strong> is each company’s reported equity market capitalization at the November 19, 2026 U.S. market close, in U.S. dollars. Each current figure links to its Stock Analysis source. This is a saved snapshot, not a live feed.</p>
   <nav class="analysis-nav" aria-label="Analysis sections">
-    <a href="#gdp-comparison">Then vs. now</a>
-    <a href="#future-peer">Tomorrow’s leaders</a>
+    <a href="#loss-probability">The three-year loss question</a>
+    <a href="#historical-evidence">Historical investor outcomes</a>
+    <a href="#fundamental-assessment">Fundamentals &amp; growth precedents</a>
+    <a href="#return-hurdles">Return requirements</a>
+    <a href="#return-distribution">Scenario distribution</a>
+    <a href="#gdp-comparison">IPO vs. snapshot</a>
+    <a href="#future-peer">Future peer scale</a>
     <a href="#business-model">Revenue &amp; profits</a>
-    <a href="#shareholder-model">Shareholder returns</a>
+    <a href="#shareholder-model">Dilution</a>
     <a href="#full-comparison">Full data table</a>
   </nav>
 
 
+  <section id="loss-probability" aria-labelledby="loss-heading">
+    <p class="eyebrow">What can be concluded</p>
+    <h2 id="loss-heading">If $100 is invested in Anthropic for three years, how likely is a loss?</h2>
+    <p><strong>A defensible company-specific percentage has not been established.</strong> Unknown does not mean 50/50. High starting valuations make the growth and cash-generation requirements demanding, but those requirements do not supply the probability of each possible outcome.</p>
+    <p>For a $100 investment held to November 2029, a nominal loss means the final share value plus any dividends is less than $100, before taxes and fees. If $100 means the price paid per share, the equivalent break-even threshold is $100 per share plus dividends. Position size changes the dollar exposure; the purchase valuation changes the return hurdle.</p>
+    <p>Historical cohort frequencies, selected company examples and hypothetical scenario weights answer different questions. None can be substituted directly for Anthropic’s actual three-year loss probability. The <a href="#historical-evidence">historical evidence</a> supports caution about returns; the <a href="#return-distribution">scenario distribution</a> shows how assumptions change modeled outcomes.</p>
+    <p class="note">The distribution’s holding period can be set to three years, but its operating scenarios are not automatically recalibrated when that period changes. They assume constant revenue growth and a chosen terminal earnings multiple. A shorter horizon may put every selected scenario into a loss; that describes the selected assumptions, not certainty of an actual loss. Rapid near-term growth can differ substantially from a sustainable long-run rate.</p>
+    <p class="gdp-note"><strong>Working assessment:</strong> rapid business growth is possible and has historical precedents. An attractive shareholder return also requires that growth to exceed the success already reflected in the purchase price, while producing cash after reinvestment and allowing for financing needs and dilution.</p>
+    <details><summary>What would be needed for a credible loss-probability estimate?</summary><p class="note">A defined entry price, valuation basis and holding period; a defensible model of revenue, margins, reinvestment, financing and future valuation; and probabilities validated against relevant historical outcomes. A broad historical average or five equally weighted scenarios does not provide that calibration.</p></details>
+  </section>
+
+<section id="historical-evidence" aria-labelledby="history-title">
+  <style>
+    #historical-evidence h3 { margin:28px 0 12px; font-size:21px; line-height:1.3; }
+    #historical-evidence .history-table-wrap { overflow-x:auto; margin:20px 0; }
+    #historical-evidence table { font-size:14px; }
+    #historical-evidence td:not(:first-child), #historical-evidence th:not(:first-child) { text-align:right; }
+    #historical-evidence td:first-child, #historical-evidence th:first-child { text-align:left; }
+    #historical-evidence .history-note { font-size:14px; }
+    #historical-evidence .history-interpretation { margin:24px 0; padding:16px 20px; background:#f1f5fb; border-left:3px solid #245ec7; line-height:1.6; }
+    #historical-evidence .history-cases { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin:20px 0; }
+    #historical-evidence .history-case { border-top:3px solid #245ec7; padding-top:12px; }
+    #historical-evidence .history-case:nth-child(2) { border-color:#9b5700; }
+    #historical-evidence .history-case h3 { margin:0 0 12px; }
+    #historical-evidence .history-case-return { display:block; font-size:28px; font-weight:700; font-variant-numeric:tabular-nums; margin:10px 0; }
+    @media(max-width:650px) { #historical-evidence .history-cases { grid-template-columns:1fr; } }
+  </style>
+  <p class="eyebrow">What historical evidence can establish</p>
+  <h2 id="history-title">Demanding valuations, disappointing returns and the probability of loss</h2>
+  <p>Three questions should be kept separate: did the business grow, did shareholders earn an attractive return, and how often did investors lose money? Company examples illustrate outcomes. A defined comparison sample can measure their historical frequency. Neither automatically supplies a calibrated probability for a particular new investment.</p>
+
+  <h3>Business growth did not guarantee attractive shareholder returns</h3>
+  <div class="history-cases">
+    <div class="history-case">
+      <h3>Microsoft · June 2005–June 2010</h3>
+      <span class="history-case-return">+0.77% total return</span>
+      <p>Fiscal-year revenue increased from <strong>$39.788B to $62.484B</strong>, approximately <strong>57%</strong>. Yet $100 invested on June 30, 2005 became only <strong>$100.77</strong> on June 30, 2010, with dividends reinvested.</p>
+      <p class="history-note">This was a disappointing absolute nominal return despite business growth. It still exceeded the S&amp;P 500’s −3.91% over that same window, so it should not be described as market underperformance.</p>
+      <p class="history-note">Sources: Microsoft’s <a href="https://www.microsoft.com/investor/reports/ar05/staticversion/10k_fh_fin.html">2005 financial highlights</a>, <a href="https://www.microsoft.com/investor/reports/ar10/10k_fh_fin.html">2010 financial highlights</a> and <a href="https://www.microsoft.com/investor/reports/ar10/10k_fr_fin.html">2010 shareholder-return table</a>.</p>
+    </div>
+    <div class="history-case">
+      <h3>Cisco · July 2000–July 2005</h3>
+      <span class="history-case-return">−69.51% total return</span>
+      <p>Fiscal-year revenue increased from <strong>$18.928B to $24.801B</strong>, approximately <strong>31%</strong>. Nevertheless, $100 invested on July 28, 2000 became <strong>$30.49</strong> on July 29, 2005.</p>
+      <p class="history-note">Cisco’s reported stock-performance comparison includes reinvested dividends. This is an example of substantial investment loss even while the company’s revenue increased.</p>
+      <p class="history-note">Sources: Cisco’s <a href="https://www.cisco.com/c/dam/en_us/about/ac49/ac20/downloads/annualreport/ar2001/pdf/AR.pdf">2001 annual report</a>, <a href="https://www.cisco.com/c/dam/en_us/about/ac49/ac20/downloads/annualreport/ar2005/pdf/ar_2005_fin_highlights.pdf">2005 financial highlights</a> and <a href="https://www.sec.gov/Archives/edgar/data/858877/000119312505191535/ddef14a.htm">2005 shareholder-return table</a>.</p>
+    </div>
+  </div>
+  <p class="history-note">These are selected historical illustrations, not a representative sample or evidence that either company’s outcome is a probability forecast for Anthropic or SpaceX. All returns above are cumulative nominal total returns, before taxes and transaction costs.</p>
+
+  <div id="history-ritter-evidence">
+    <h3>Higher IPO revenue multiples and subsequent average returns</h3>
+    <p class="history-note">Ritter’s 1980–2024 IPO sample below requires at least $100M of pre-issue annual revenue, inflation-adjusted to January 2025 dollars. Returns include dividends, begin at the first-day close, and extend up to three years, through December 2025.</p>
+    <div class="history-table-wrap">
+      <table>
+        <caption>Initial price-to-sales ratio and average subsequent return</caption>
+        <thead><tr><th scope="col">Initial price / annual revenue</th><th scope="col">IPOs</th><th scope="col">Average return</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Below 5×</th><td>3,384</td><td>+41.3%</td></tr>
+          <tr><th scope="row">5–10×</th><td>395</td><td>+20.7%</td></tr>
+          <tr><th scope="row">10–20×</th><td>198</td><td>+18.5%</td></tr>
+          <tr><th scope="row">20–40×</th><td>87</td><td>+2.9%</td></tr>
+          <tr><th scope="row">Above 40×</th><td>46</td><td>−44.8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="history-note">Source: <a href="https://site.warrington.ufl.edu/ritter/files/IPOs-long-run-returns-on-IPOs.pdf">Ritter, Table 18d</a>. This table reports averages, not the fraction losing money.</p>
+
+    <h3>Observed loss frequencies depend on the comparison group</h3>
+    <div class="history-table-wrap">
+      <table>
+        <caption>Three-year outcomes: 1975–2021 IPOs, bought at first-day close</caption>
+        <thead><tr><th scope="col">Cohort</th><th scope="col">IPOs</th><th scope="col">Mean return</th><th scope="col">Median return</th><th scope="col">Flat or negative</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">All sampled IPOs</th><td>9,195</td><td>+21.2%</td><td>−25.7%</td><td>60.0%</td></tr>
+          <tr><th scope="row">Pre-issue revenue ≥$100M</th><td>4,112</td><td>+38.1%</td><td>+2.6%</td><td>48.8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="history-note">“Flat or negative” includes zero returns. The revenue threshold uses January 2025 dollars. Returns include dividends and end at three years or earlier delisting. Source: <a href="https://site.warrington.ufl.edu/ritter/files/IPOs-long-run-returns-on-IPOs.pdf">Ritter, Table 16e</a>.</p>
+  </div>
+
+  <p class="history-interpretation"><strong>An average return is not a loss probability.</strong> A few very large winners can lift the mean even when many investors lose money. Conversely, severe losses in a minority of cases can make the average negative. The two measures answer different questions.</p>
+  <p>Historical high-valuation outcomes strengthen the case for caution about entry price. To estimate whether Anthropic or SpaceX is more likely than not to lose money, the model would need an appropriate comparison group, a specified entry valuation and holding period, and defensible outcome probabilities. Three-year historical frequencies cannot simply be substituted for the ten-year scenario weights in this report.</p>
+  <p class="history-note">The conclusion is therefore conditional: substantial business growth can produce negligible shareholder gains or substantial losses when expectations are demanding. The illustrative distribution explores that mechanism; it does not establish either company’s real-world odds.</p>
+</section>
+
+<section id="fundamental-assessment" aria-labelledby="fundamental-assessment-heading">
+  <style>
+    #fundamental-assessment .fundamental-table-wrap { overflow-x:auto; margin:24px 0; }
+    #fundamental-assessment table { font-size:14px; }
+    #fundamental-assessment th:not(:first-child), #fundamental-assessment td:not(:first-child) { text-align:right; }
+    #fundamental-assessment th:first-child, #fundamental-assessment td:first-child { text-align:left; white-space:normal; min-width:150px; }
+    #fundamental-assessment .fundamental-note { font-size:14px; }
+    #fundamental-assessment .fundamental-assessment { padding:16px 20px; background:#f1f5fb; border-left:3px solid #245ec7; }
+    #fundamental-assessment .fundamental-companies { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin:24px 0; }
+    #fundamental-assessment h3 { margin:0 0 10px; font-size:20px; }
+    #fundamental-assessment .fundamental-companies p { margin:10px 0; }
+    @media(max-width:700px) { #fundamental-assessment .fundamental-companies { grid-template-columns:1fr; gap:16px; } }
+  </style>
+  <p class="eyebrow">Business performance and the purchase price</p>
+  <h2 id="fundamental-assessment-heading">Can business growth support these valuations?</h2>
+  <p class="fundamental-assessment"><strong>Assessment:</strong> the required growth has historical precedent, but attractive investment returns depend on durable profits and cash generation as well as revenue growth. High entry valuations already anticipate considerable success. A company can become much larger while its shares deliver modest gains or losses. This assessment does not assign a probability to either outcome.</p>
+  <p>Matching Apple’s or Google’s present share of GDP measures future economic scale. Establishing a fair purchase price requires a different exercise: estimating future owner cash flows, their timing and risk, and the financing needed to produce them. The scenario calculators are conditional illustrations of those requirements, rather than fair-value estimates.</p>
+  <div class="fundamental-table-wrap">
+    <table>
+      <caption>Entry valuation relative to trailing revenue — saved November 19, 2026 snapshot</caption>
+      <thead><tr><th scope="col">Company and share-count basis</th><th scope="col">Equity valuation</th><th scope="col">Trailing annual revenue</th><th scope="col">Equity value / revenue</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">SpaceX · outstanding shares</th><td>$1.88T</td><td>$32.040B</td><td>58.7×</td></tr>
+        <tr><th scope="row">Anthropic · outstanding shares</th><td>$1.28T</td><td>$35.282B</td><td>36.3×</td></tr>
+        <tr><th scope="row">Anthropic · fully diluted</th><td>Approximately $1.756T</td><td>$35.282B</td><td>49.8×</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fundamental-note">Sources: saved market-cap snapshots for <a href="https://stockanalysis.com/stocks/spcx/">SpaceX</a> and <a href="https://stockanalysis.com/stocks/ant/">Anthropic</a>, and <a href="https://apnews.com/article/fdca56f1cda70c9908899057e7e591e6">Anthropic’s fully diluted closing valuation</a>. These equity-to-revenue ratios do not adjust for cash or debt. Fully diluted valuation includes a broader share count than basic market capitalization; mixing the two bases can distort a comparison. Trailing revenue also lags rapidly changing recent-quarter activity.</p>
+  <div class="fundamental-companies">
+    <div>
+      <h3>SpaceX: operating progress and heavy reinvestment</h3>
+      <p>Third-quarter 2026 revenue was <strong>$14.575B</strong>, with <strong>$2.791B of operating income</strong>. Connectivity, including Starlink, generated $5.248B of revenue and $2.367B of operating income.</p>
+      <p>For the first nine months, operating cash flow was <strong>$13.097B</strong>, against <strong>$48.069B of capital expenditure</strong>: approximately <strong>−$34.972B</strong> using operating cash flow minus purchases of property and equipment. Acquired AI businesses contribute substantially to growth, so consolidated expansion is not entirely organic. The investment case depends on these expenditures eventually supporting durable cash generation. <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm">SpaceX Q3 2026 SEC filing</a>.</p>
+    </div>
+    <div>
+      <h3>Anthropic: rapid growth and large compute obligations</h3>
+      <p>Third-quarter 2026 revenue was <strong>$16.956B</strong>. In the first nine months, the operating loss was <strong>$1.260B</strong> and operating cash flow was <strong>+$6.569B</strong>. The $104.039B headline net loss included $94.324B of financial-instrument fair-value charges; it should not be read as cash burn.</p>
+      <p>Disclosed commitments totaled <strong>$900.9B across multiple years</strong>, with $70.7B due within twelve months. These are spending commitments, not all current debt, and some are conditional. Sustained 20% net profit margins have not been established. Growth must therefore be assessed alongside continuing training, infrastructure and financing costs. <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm">Anthropic final IPO prospectus</a>.</p>
+    </div>
+  </div>
+  <h3>Is there precedent for 20%–25% annual revenue growth?</h3>
+  <p>Yes. The following are calculated compound averages from reported revenue endpoints. They describe nominal revenue growth, not smooth yearly increases or shareholder returns.</p>
+  <div class="fundamental-table-wrap">
+    <table>
+      <caption>Exceptional historical revenue-growth records</caption>
+      <thead><tr><th scope="col">Company</th><th scope="col">Period</th><th scope="col">Starting revenue</th><th scope="col">Ending revenue</th><th scope="col">Annualized growth</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Amazon</th><td>2010–2025 · 15 years</td><td>$34.204B</td><td>$716.924B</td><td>22.49%</td></tr>
+        <tr><th scope="row">Google / Alphabet</th><td>2005–2025 · 20 years</td><td>$6.139B</td><td>$402.836B</td><td>23.27%</td></tr>
+        <tr><th scope="row">Nvidia</th><td>FY2006–FY2026 · 20 years</td><td>$2.376B</td><td>$215.938B</td><td>25.29%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fundamental-note">Endpoint sources: Amazon <a href="https://press.aboutamazon.com/2011/1/amazon-com-announces-fourth-quarter-sales-up-36-to-12-95-billion">2010 results</a> and <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm">2025 annual report</a>; Google <a href="https://www.sec.gov/Archives/edgar/data/1288776/000119312507044494/d10k.htm">historical audited revenue</a> and <a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm">2025 annual report</a>; Nvidia <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581006000014/fy2006annualreportonform10-k.htm">FY2006 annual report</a> and <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx">FY2026 results</a>. CAGR = (ending revenue ÷ starting revenue)<sup>1 / years</sup> − 1; calculations use unrounded figures.</p>
+  <p>Amazon is the closest starting-size comparison: its $34B revenue base resembles those used for SpaceX and Anthropic. However, its record spans fifteen years rather than twenty, and its 2025 net margin was approximately <strong>10.8%</strong>, below the calculators’ illustrative 20% assumption. Google and Nvidia began from much smaller revenue bases. Selecting these winners introduces survivorship bias: the examples demonstrate what happened in exceptional cases, not how likely another company is to repeat it.</p>
+  <h3>The entry price changes the opportunity</h3>
+  <p>An early investor buying at a $10B valuation and a later investor buying at $1T have very different potential returns. Reaching $2T represents 200× the first valuation and 2× the second, before dilution. Likewise, a successful company can disappoint shareholders if its valuation multiple falls faster than the business grows.</p>
+  <p class="fundamental-note">An IPO allocation at the offering price also differs from buying after trading opens. The secondary-market price can be materially higher or lower; retail buyers are not guaranteed either the IPO price or a worse outcome. <a href="https://www.sec.gov/answers/ipopricing.htm">SEC explanation of IPO pricing differences</a>. Comparing total company value across time does not itself measure an individual investor’s return, especially when new shares are issued.</p>
+</section>
+
+
+  <section id="return-hurdles" aria-labelledby="hurdle-heading">
+    <p class="eyebrow">The purchase-price question</p>
+    <h2 id="hurdle-heading">What growth could deliver a 10% annual gain?</h2>
+    <p>Matching a peer’s share of GDP does not establish that a stock is attractively priced. This reverse-valuation illustration asks what business scale would accompany <strong>10% annual market-cap appreciation</strong>, assuming a terminal valuation of <strong>30× annual net earnings</strong> and a <strong>20% net margin</strong>.</p>
+    <p class="note">The calculation assumes no additional net share issuance and no interim distributions. Under those assumptions, market-cap appreciation equals share-price appreciation. It is a terminal-value illustration, not a full discounted-cash-flow estimate of fair value. All amounts are nominal, with a November 19, 2026 starting point.</p>
+    <div class="table-wrap"><table>
+      <caption>Business requirements under illustrative 10% annual appreciation, 30× earnings and 20% net margin assumptions</caption>
+      <thead><tr><th scope="col">Starting equity basis</th><th scope="col">Years</th><th scope="col">Future equity value</th><th scope="col">Annual net profit</th><th scope="col">Annual revenue</th><th scope="col">Revenue growth / year</th></tr></thead>
+      <tbody>
+<tr><th scope="row">SpaceX · $1.88T</th><td>10</td><td>$4.876T</td><td>$162.5B</td><td>$812.7B</td><td>38.17%</td></tr>
+<tr><th scope="row">SpaceX · $1.88T</th><td>20</td><td>$12.648T</td><td>$421.6B</td><td>$2,107.9B</td><td>23.28%</td></tr>
+<tr><th scope="row">Anthropic basic · $1.28T</th><td>10</td><td>$3.320T</td><td>$110.7B</td><td>$553.3B</td><td>31.69%</td></tr>
+<tr><th scope="row">Anthropic basic · $1.28T</th><td>20</td><td>$8.611T</td><td>$287.0B</td><td>$1,435.2B</td><td>20.36%</td></tr>
+<tr><th scope="row">Anthropic fully diluted · $1.756T</th><td>10</td><td>$4.555T</td><td>$151.8B</td><td>$759.1B</td><td>35.92%</td></tr>
+<tr><th scope="row">Anthropic fully diluted · $1.756T</th><td>20</td><td>$11.813T</td><td>$393.8B</td><td>$1,968.9B</td><td>22.27%</td></tr>
+      </tbody></table></div>
+    <p class="note">Revenue starts at $32.04B for SpaceX and $35.282B for Anthropic. A fully diluted entry basis includes a broader share count; only additional future issuance should enter any separate dilution assumption. Annualizing the latest quarter produces a different growth baseline, and does not constitute a forecast.</p>
+    <p>Reaching sufficient profits to support an unchanged purchase valuation years later does not itself deliver capital appreciation. A stronger return requires either a larger business, a higher valuation multiple, distributions to shareholders, or some combination.</p>
+    <details><summary>Why can rapid business growth still produce a disappointing stock return?</summary>
+      <p>Assume a purchase valuation of 60× annual revenue and an unchanged share count. The following arithmetic illustrates how a lower valuation multiple can offset business growth; these are not forecasts for either company.</p>
+      <div class="table-wrap"><table><caption>Revenue growth versus valuation-multiple compression</caption><thead><tr><th scope="col">Revenue multiple</th><th scope="col">Ending price / sales</th><th scope="col">Share-price result</th></tr></thead><tbody>
+      <tr><td>3×</td><td>20×</td><td>0%</td></tr><tr><td>3×</td><td>10×</td><td>−50%</td></tr><tr><td>10×</td><td>10×</td><td>+66.7%</td></tr>
+      </tbody></table></div>
+      <p class="note">If the tenfold revenue increase takes ten years, the last case corresponds to approximately 5.2% annual share-price appreciation. This illustration ignores dividends and additional issuance.</p>
+    </details>
+    <p class="note">IPO allocation prices and prices after trading opens can differ substantially. A gain for an early private investor or an investor allocated IPO shares does not establish a gain for a later public-market buyer. <a href="https://www.sec.gov/answers/ipopricing.htm">SEC: IPO pricing differences</a>.</p>
+  </section>
+
+  <section id="return-distribution" aria-labelledby="dist-title">
+  <style>
+    #return-distribution .dist-warning { padding:16px 20px; background:#fff7e8; border-left:3px solid #9b5700; line-height:1.6; }
+    #return-distribution .dist-controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 28px; margin:24px 0; }
+    #return-distribution .dist-field { display:flex; flex-direction:column; gap:8px; min-width:0; }
+    #return-distribution label { font-weight:600; line-height:1.5; }
+    #return-distribution input, #return-distribution select { box-sizing:border-box; width:100%; min-width:0; padding:9px 10px; border:1px solid #a7b0bf; border-radius:6px; font:inherit; background:white; color:inherit; }
+    #return-distribution input[readonly] { background:#f3f5f8; }
+    #return-distribution .dist-note { font-size:14px; }
+    #return-distribution .dist-hint { font-size:12px; color:#56667c; }
+    #return-distribution .dist-summary { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:24px 0; }
+    #return-distribution .dist-stat { border-top:3px solid #245ec7; padding-top:12px; }
+    #return-distribution .dist-label { display:block; color:#4b5567; line-height:1.5; }
+    #return-distribution .dist-value { display:block; margin-top:8px; font-size:28px; font-weight:700; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+    #return-distribution .dist-axis, #return-distribution .dist-bin { display:grid; grid-template-columns:130px minmax(0,1fr) 62px; gap:12px; align-items:center; }
+    #return-distribution .dist-axis { color:#56667c; font-size:12px; margin:18px 0 12px; }
+    #return-distribution .dist-ticks { display:flex; justify-content:space-between; }
+    #return-distribution .dist-bins { display:grid; gap:15px; margin:10px 0 22px; }
+    #return-distribution .dist-bin { font-size:14px; }
+    #return-distribution .dist-track { height:18px; background:#f0f2f6; }
+    #return-distribution .dist-bar { height:100%; background:#245ec7; }
+    #return-distribution .dist-bar.loss { background:#9b5700; }
+    #return-distribution .dist-weight { text-align:right; font-variant-numeric:tabular-nums; }
+    #return-distribution .dist-zero { border-top:1px solid #a7b0bf; padding-top:15px; }
+    #return-distribution .dist-legend { display:flex; flex-wrap:wrap; gap:20px; margin:14px 0; font-size:14px; }
+    #return-distribution .dist-key { display:flex; gap:8px; align-items:center; }
+    #return-distribution .dist-swatch { display:inline-block; width:24px; height:10px; background:#245ec7; }
+    #return-distribution .dist-swatch.loss { background:#9b5700; }
+    #return-distribution .dist-table-wrap { overflow-x:auto; margin:24px 0; }
+    #return-distribution table { font-size:14px; }
+    #return-distribution table td:not(:first-child), #return-distribution table th:not(:first-child) { text-align:right; }
+    #return-distribution table td:first-child, #return-distribution table th:first-child { text-align:left; white-space:normal; min-width:120px; }
+    #return-distribution table input { min-width:76px; width:90px; }
+    #return-distribution .dist-error { color:#8b230f; font-weight:600; }
+    @media(max-width:700px) { #return-distribution .dist-summary { grid-template-columns:1fr; } }
+    @media(max-width:500px) { #return-distribution .dist-controls { grid-template-columns:1fr; } #return-distribution .dist-bin, #return-distribution .dist-axis { grid-template-columns:100px minmax(0,1fr) 50px; gap:8px; font-size:12px; } }
+  </style>
+  <p class="eyebrow">Assumption-weighted outcomes</p>
+  <h2 id="dist-title">Possible share-price gains and losses, with assigned scenario weights</h2>
+  <p>This chart translates five hypothetical business outcomes into a distribution of nominal share-price gains and losses. The probabilities are inputs you assign; they are not estimates derived from market data or a calibrated forecasting model.</p>
+  <p class="dist-warning"><strong>The default weights are arbitrary.</strong> Each of the five scenarios starts with the same relative weight, giving 20% to each. This is a demonstration, not an investment forecast. <span id="dist-warning-result">The initial assumptions put 60% of the weight on losses; that does not mean the real-world chance of losing is 60%.</span></p>
+  <div class="dist-controls">
+    <div class="dist-field"><label for="dist-company">Company and entry valuation basis</label><select id="dist-company"><option value="anthropic-fd">Anthropic · fully diluted, approximately $1.756T</option><option value="spacex">SpaceX · outstanding shares, $1.88T</option><option value="anthropic-basic">Anthropic · outstanding shares, $1.28T</option></select><span class="dist-hint">Saved November 19, 2026 snapshot; not a live price</span></div>
+    <div class="dist-field"><label for="dist-entry">Entry equity valuation ($T)</label><input id="dist-entry" type="number" min="0.1" max="10" step="0.001" value="1.756" inputmode="decimal"><span class="dist-hint">Change this to test a different purchase price</span></div>
+    <div class="dist-field"><label for="dist-years">Holding period (years)</label><input id="dist-years" type="number" min="1" max="30" step="1" value="10" inputmode="numeric"></div>
+    <div class="dist-field"><label for="dist-dilution">Additional annual net share-count growth (%)</label><input id="dist-dilution" type="number" min="0" max="5" step="0.5" value="2" inputmode="decimal"><span class="dist-hint">For a fully diluted entry value, count only future issuance beyond shares already included</span></div>
+    <div class="dist-field"><label for="dist-revenue">Starting trailing annual revenue ($B)</label><input id="dist-revenue" type="number" value="35.282" readonly><span class="dist-hint">Historical revenue baseline, not an annualized latest-quarter forecast</span></div>
+  </div>
+  <div class="dist-summary" aria-live="polite" aria-atomic="true">
+    <div class="dist-stat"><span class="dist-label">Weight assigned to loss outcomes</span><span class="dist-value" id="dist-loss-weight">60.0%</span></div>
+    <div class="dist-stat"><span class="dist-label">Scenario-weighted mean cumulative return</span><span class="dist-value" id="dist-mean">+46.1%</span></div>
+    <div class="dist-stat"><span class="dist-label">Weighted median cumulative return</span><span class="dist-value" id="dist-median">−49.0%</span></div>
+  </div>
+  <p id="dist-error" class="dist-error" role="alert" hidden>Assign a positive weight to at least one scenario to calculate a distribution.</p>
+  <p id="dist-chart-heading" class="dist-note"><strong>Assigned weight by 10-year return interval</strong></p>
+  <div class="dist-legend"><span class="dist-key"><i class="dist-swatch loss" aria-hidden="true"></i>Loss intervals</span><span class="dist-key"><i class="dist-swatch" aria-hidden="true"></i>Zero or positive return intervals</span></div>
+  <div class="dist-axis" aria-hidden="true"><span>Share-price return</span><span class="dist-ticks"><span>0%</span><span>50%</span><span>100%</span></span><span>Weight</span></div>
+  <div id="dist-chart" class="dist-bins" role="list" aria-label="Assigned scenario weight in each cumulative share-price return interval"></div>
+  <p class="dist-note">The horizontal axis is assigned weight from 0% to 100%. The rows are categorical return intervals with different widths, not a continuous probability density. Each interval includes its lower bound and excludes its upper bound; the last includes every gain of 400% or more. A 0% return is assigned to the first non-loss interval.</p>
+  <div class="dist-table-wrap">
+    <table>
+      <caption id="dist-table-caption">Editable joint scenarios and computed 10-year share-price returns</caption>
+      <thead><tr><th scope="col">Scenario</th><th scope="col">Relative weight</th><th scope="col">Revenue growth / year (%)</th><th scope="col">Terminal net margin (%)</th><th scope="col">Terminal P/E</th><th scope="col">Normalized assigned weight</th><th scope="col">Cumulative share-price return</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Equity wiped out</th><td><input id="dist-weight-0" type="number" min="0" max="100" step="1" value="20" aria-label="Equity wiped out relative weight"></td><td colspan="3">Terminal equity value is zero</td><td id="dist-normalized-0">20.0%</td><td id="dist-return-0">−100.0%</td></tr>
+        <tr><th scope="row">Slow growth</th><td><input id="dist-weight-1" type="number" min="0" max="100" step="1" value="20" aria-label="Slow growth relative weight"></td><td><input id="dist-growth-1" type="number" min="0" max="60" step="1" value="10" aria-label="Slow scenario annual revenue growth percent"></td><td><input id="dist-margin-1" type="number" min="0" max="50" step="1" value="10" aria-label="Slow scenario terminal net margin percent"></td><td><input id="dist-pe-1" type="number" min="5" max="60" step="1" value="20" aria-label="Slow scenario terminal P E multiple"></td><td id="dist-normalized-1">20.0%</td><td id="dist-return-1">−91.4%</td></tr>
+        <tr><th scope="row">Strong growth</th><td><input id="dist-weight-2" type="number" min="0" max="100" step="1" value="20" aria-label="Strong growth relative weight"></td><td><input id="dist-growth-2" type="number" min="0" max="60" step="1" value="20" aria-label="Strong scenario annual revenue growth percent"></td><td><input id="dist-margin-2" type="number" min="0" max="50" step="1" value="20" aria-label="Strong scenario terminal net margin percent"></td><td><input id="dist-pe-2" type="number" min="5" max="60" step="1" value="25" aria-label="Strong scenario terminal P E multiple"></td><td id="dist-normalized-2">20.0%</td><td id="dist-return-2">−49.0%</td></tr>
+        <tr><th scope="row">Exceptional growth</th><td><input id="dist-weight-3" type="number" min="0" max="100" step="1" value="20" aria-label="Exceptional growth relative weight"></td><td><input id="dist-growth-3" type="number" min="0" max="60" step="1" value="30" aria-label="Exceptional scenario annual revenue growth percent"></td><td><input id="dist-margin-3" type="number" min="0" max="50" step="1" value="25" aria-label="Exceptional scenario terminal net margin percent"></td><td><input id="dist-pe-3" type="number" min="5" max="60" step="1" value="30" aria-label="Exceptional scenario terminal P E multiple"></td><td id="dist-normalized-3">20.0%</td><td id="dist-return-3">+70.4%</td></tr>
+        <tr><th scope="row">Breakout growth</th><td><input id="dist-weight-4" type="number" min="0" max="100" step="1" value="20" aria-label="Breakout growth relative weight"></td><td><input id="dist-growth-4" type="number" min="0" max="60" step="1" value="40" aria-label="Breakout scenario annual revenue growth percent"></td><td><input id="dist-margin-4" type="number" min="0" max="50" step="1" value="30" aria-label="Breakout scenario terminal net margin percent"></td><td><input id="dist-pe-4" type="number" min="5" max="60" step="1" value="35" aria-label="Breakout scenario terminal P E multiple"></td><td id="dist-normalized-4">20.0%</td><td id="dist-return-4">+400.6%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dist-note">Weights are relative inputs and are normalized to sum to 100%; they do not have to total 100 before normalization. Growth, margins and valuation multiples form joint scenarios. Pairing faster growth with better margins and higher multiples creates a substantial upside tail by assumption. A positive weighted mean can coexist with most assigned weight falling on losses. The default 60% loss weight is not calibrated to the historical three-year IPO figures: the holding periods, populations and return definitions differ.</p>
+  <details><summary>Model formulas and limits</summary><ul class="formulas"><li>Terminal revenue = starting trailing annual revenue × (1 + annual revenue growth)<sup>years</sup>.</li><li>Terminal equity value = terminal revenue × terminal net profit margin × terminal P/E. The wipeout scenario has zero equity value.</li><li>Per-share price factor = terminal equity value ÷ entry equity value ÷ (1 + additional annual net share-count growth)<sup>years</sup>.</li><li>Cumulative return = price factor − 1. The mean is the weighted arithmetic mean of cumulative returns; it is not an expected annual return.</li><li>The weighted median is the lowest return at which cumulative assigned weight reaches 50%.</li><li>These are nominal price changes, excluding dividends, taxes and transaction costs. This terminal-value illustration does not model interim cash flows, cash/debt balances, financing needs, valuation changes along the path or correlations calibrated to observed data.</li></ul></details>
+  <p class="dist-note">Snapshot sources: <a href="https://stockanalysis.com/stocks/spcx/">SpaceX outstanding-share valuation</a>, <a href="https://stockanalysis.com/stocks/ant/">Anthropic outstanding-share valuation</a>, <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm">Anthropic revenue and share disclosures</a>, and <a href="https://apnews.com/article/fdca56f1cda70c9908899057e7e591e6">Anthropic fully diluted closing valuation report</a>. The approximately $1.756T fully diluted entry incorporates a broader share count than the $1.28T basic market cap.</p>
+  <noscript><p>Enable JavaScript to calculate the chart and adjust scenario assumptions. The initial table uses Anthropic’s approximately $1.756T fully diluted valuation, 10 years, 2% annual additional share-count growth and equal scenario weights.</p></noscript>
+  <script>
+  (() => {
+    const root = document.getElementById('return-distribution');
+    const companyInput = root.querySelector('#dist-company');
+    const companies = {
+      'anthropic-fd': { name:'Anthropic, fully diluted', cap:1756, revenue:35.282 },
+      'spacex': { name:'SpaceX, outstanding shares', cap:1880, revenue:32.04 },
+      'anthropic-basic': { name:'Anthropic, outstanding shares', cap:1280, revenue:35.282 }
+    };
+    const settings = {
+      entry:{id:'dist-entry',min:0.1,max:10,initial:1.756},
+      years:{id:'dist-years',min:1,max:30,initial:10},
+      dilution:{id:'dist-dilution',min:0,max:5,initial:2}
+    };
+    const defaults = [
+      { name:'Equity wiped out', weight:20 },
+      { name:'Slow growth', weight:20, growth:10, margin:10, pe:20 },
+      { name:'Strong growth', weight:20, growth:20, margin:20, pe:25 },
+      { name:'Exceptional growth', weight:20, growth:30, margin:25, pe:30 },
+      { name:'Breakout growth', weight:20, growth:40, margin:30, pe:35 }
+    ];
+    const fields = Object.fromEntries(Object.entries(settings).map(([key,value])=>[key,root.querySelector('#'+value.id)]));
+    const scenarioFields = defaults.map((scenario,index) => Object.fromEntries(Object.keys(scenario).filter(key=>key!=='name').map(key=>[key,root.querySelector('#dist-'+key+'-'+index)])));
+    const limits = { weight:[0,100], growth:[0,60], margin:[0,50], pe:[5,60] };
+    const bins = [
+      {lower:-100,upper:-75,label:'−100% to <−75%'},
+      {lower:-75,upper:-50,label:'−75% to <−50%'},
+      {lower:-50,upper:-25,label:'−50% to <−25%'},
+      {lower:-25,upper:0,label:'−25% to <0%'},
+      {lower:0,upper:50,label:'0% to <50%'},
+      {lower:50,upper:100,label:'50% to <100%'},
+      {lower:100,upper:200,label:'100% to <200%'},
+      {lower:200,upper:400,label:'200% to <400%'},
+      {lower:400,upper:Infinity,label:'400% or more'}
+    ];
+    const read = (field,min,max,initial) => {
+      const raw = field.value.trim();
+      const number = raw === '' ? initial : Number(raw);
+      return Math.min(max,Math.max(min,Number.isFinite(number)?number:initial));
+    };
+    const signed = value => (value>0?'+':value<0?'−':'')+Math.abs(value).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+    const setText = (id,text) => { root.querySelector('#'+id).textContent=text; };
+    function render() {
+      const company = companies[companyInput.value] || companies['anthropic-fd'];
+      const entry = read(fields.entry,0.1,10,company.cap/1000)*1000;
+      const years = Math.round(read(fields.years,1,30,10));
+      const dilution = read(fields.dilution,0,5,2)/100;
+      root.querySelector('#dist-revenue').value=company.revenue.toFixed(3);
+      const outcomes = defaults.map((scenario,index) => {
+        const values = Object.fromEntries(Object.entries(scenarioFields[index]).map(([key,field])=>[key,read(field,limits[key][0],limits[key][1],scenario[key])]));
+        const terminalRevenue = index===0?0:company.revenue*Math.pow(1+values.growth/100,years);
+        const terminalCap = index===0?0:terminalRevenue*values.margin/100*values.pe;
+        const gain = (terminalCap/entry/Math.pow(1+dilution,years)-1)*100;
+        return {name:scenario.name,weight:values.weight,gain};
+      });
+      const total = outcomes.reduce((sum,outcome)=>sum+outcome.weight,0);
+      const valid = total>0;
+      root.querySelector('#dist-error').hidden=valid;
+      outcomes.forEach((outcome,index)=>{
+        outcome.probability=valid?outcome.weight/total:0;
+        setText('dist-normalized-'+index,valid?(outcome.probability*100).toFixed(1)+'%':'—');
+        setText('dist-return-'+index,signed(outcome.gain));
+      });
+      const loss = outcomes.filter(outcome=>outcome.gain<0).reduce((sum,outcome)=>sum+outcome.probability,0)*100;
+      const mean = outcomes.reduce((sum,outcome)=>sum+outcome.probability*outcome.gain,0);
+      let cumulative=0, median=0;
+      for (const outcome of [...outcomes].sort((a,b)=>a.gain-b.gain)) {
+        cumulative+=outcome.probability;
+        if (cumulative>=0.5-1e-12) { median=outcome.gain; break; }
+      }
+      setText('dist-loss-weight',valid?loss.toFixed(1)+'%':'Not assigned');
+      setText('dist-mean',valid?signed(mean):'Not assigned');
+      setText('dist-median',valid?signed(median):'Not assigned');
+      setText('dist-warning-result',valid?'Your current inputs put '+loss.toFixed(1)+'% of the weight on losses; this is not an estimated real-world probability of loss.':'No probability distribution is assigned while all weights are zero.');
+      setText('dist-chart-heading','Assigned weight by '+years+'-year return interval · '+company.name);
+      setText('dist-table-caption','Editable joint scenarios and computed '+years+'-year share-price returns');
+      root.querySelector('#dist-chart').innerHTML=bins.map((bin,index)=>{
+        const weight = outcomes.filter(outcome=>outcome.gain>=bin.lower&&outcome.gain<bin.upper).reduce((sum,outcome)=>sum+outcome.probability*100,0);
+        return '<div class="dist-bin'+(index===4?' dist-zero':'')+'" role="listitem"><span>'+bin.label+'</span><div class="dist-track" aria-hidden="true"><div class="dist-bar'+(bin.upper<=0?' loss':'')+'" style="width:'+weight.toFixed(6)+'%"></div></div><span class="dist-weight">'+(valid?weight.toFixed(1)+'%':'—')+'</span></div>';
+      }).join('');
+    }
+    companyInput.addEventListener('change',()=>{
+      const company=companies[companyInput.value]||companies['anthropic-fd'];
+      fields.entry.value=(company.cap/1000).toFixed(3);
+      render();
+    });
+    for (const [key,field] of Object.entries(fields)) {
+      field.addEventListener('input',render);
+      field.addEventListener('change',()=>{
+        const rule=settings[key];
+        const value=read(field,rule.min,rule.max,key==='entry'?(companies[companyInput.value]||companies['anthropic-fd']).cap/1000:rule.initial);
+        field.value=String(key==='years'?Math.round(value):value);
+        render();
+      });
+    }
+    scenarioFields.forEach((group,index)=>{
+      for (const [key,field] of Object.entries(group)) {
+        field.addEventListener('input',render);
+        field.addEventListener('change',()=>{
+          field.value=String(read(field,limits[key][0],limits[key][1],defaults[index][key]));
+          render();
+        });
+      }
+    });
+    render();
+  })();
+  </script>
+</section>
+
+
   <section id="gdp-comparison" aria-labelledby="scale-heading">
     <p class="eyebrow">Economic scale, then and now</p>
-    <h2 id="scale-heading">Company valuation relative to GDP: at IPO vs. today</h2>
-    <p><strong>IPO</strong> compares the original IPO valuation with U.S. GDP in that year. <strong>Today</strong> compares the current market capitalization with current U.S. GDP. Both bars use the same linear percentage scale, starting at zero.</p>
-    <p>For example, Meta’s valuation rose from <strong>0.64% of GDP at IPO</strong> to <strong>4.60% today</strong>. Apple’s current valuation equals <strong>15.36%</strong> of GDP. This places the recent IPOs alongside the present size of established companies, as well as their size at IPO.</p>
+    <h2 id="scale-heading">Company valuation relative to GDP: at IPO vs. the November 2026 snapshot</h2>
+    <p><strong>IPO</strong> compares the original IPO valuation with U.S. GDP in that year. <strong>Snapshot</strong> compares the current market capitalization with current U.S. GDP. Both bars use the same linear percentage scale, starting at zero.</p>
+    <p>For example, Meta’s valuation rose from <strong>0.64% of GDP at IPO</strong> to <strong>4.60% in the snapshot</strong>. Apple’s current valuation equals <strong>15.36%</strong> of GDP. This places the recent IPOs alongside the present size of established companies, as well as their size at IPO.</p>
     <div class="comparison-controls"><label for="comparison-view">Companies shown</label><select id="comparison-view"><option value="trillion">Trillion-dollar companies (11)</option><option value="all">All 22 companies</option></select></div>
     <div class="comparison-legend"><span class="comparison-key"><i class="comparison-swatch" aria-hidden="true"></i>IPO valuation / IPO-year GDP</span><span class="comparison-key"><i class="comparison-swatch current" aria-hidden="true"></i>Current valuation / current GDP</span></div>
     <div class="comparison-axis" aria-hidden="true"><span></span><div class="comparison-measure"><span></span><span class="comparison-axis-ticks"><span>0%</span><span>8%</span><span>16%</span></span><span></span></div></div>
-    <div id="comparison-bars" role="list" aria-label="Valuation as a percentage of U.S. GDP, at IPO and today">
-<div class="comparison-row" role="listitem"><div class="comparison-name">Apple<span class="comparison-year">IPO 1980</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.393727%"></div></div><span class="comparison-percent">0.06%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:95.993534%"></div></div><span class="comparison-percent">15.36%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Microsoft<span class="comparison-year">IPO 1986</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.070830%"></div></div><span class="comparison-percent">0.01%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:70.054453%"></div></div><span class="comparison-percent">11.21%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Nvidia<span class="comparison-year">IPO 1999</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.014925%"></div></div><span class="comparison-percent">0.0024%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:66.646398%"></div></div><span class="comparison-percent">10.66%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Alphabet (Google)<span class="comparison-year">IPO 2004</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:1.176620%"></div></div><span class="comparison-percent">0.19%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:63.427680%"></div></div><span class="comparison-percent">10.15%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Amazon<span class="comparison-year">IPO 1997</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.031915%"></div></div><span class="comparison-percent">0.0051%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:52.635508%"></div></div><span class="comparison-percent">8.42%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">SpaceX<span class="comparison-year">IPO 2026</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:33.512535%"></div></div><span class="comparison-percent">5.36%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:35.595235%"></div></div><span class="comparison-percent">5.70%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Broadcom (Avago)<span class="comparison-year">IPO 2009</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.151091%"></div></div><span class="comparison-percent">0.02%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:31.240499%"></div></div><span class="comparison-percent">5.00%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">TSMC<span class="comparison-year">IPO 1994</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.343066%"></div></div><span class="comparison-percent">0.05%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:30.293817%"></div></div><span class="comparison-percent">4.85%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Meta (Facebook)<span class="comparison-year">IPO 2012</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:3.999023%"></div></div><span class="comparison-percent">0.64%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:28.779126%"></div></div><span class="comparison-percent">4.60%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Tesla<span class="comparison-year">IPO 2010</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.070603%"></div></div><span class="comparison-percent">0.01%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:28.021781%"></div></div><span class="comparison-percent">4.48%</span></div></div></div>
-<div class="comparison-row" role="listitem"><div class="comparison-name">Anthropic<span class="comparison-year">IPO 2026</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:28.400454%"></div></div><span class="comparison-percent">4.54%</span></div><div class="comparison-measure"><span>Today</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:24.235054%"></div></div><span class="comparison-percent">3.88%</span></div></div></div>
+    <div id="comparison-bars" role="list" aria-label="Valuation as a percentage of U.S. GDP, at IPO and in the snapshot">
+<div class="comparison-row" role="listitem"><div class="comparison-name">Apple<span class="comparison-year">IPO 1980</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.393727%"></div></div><span class="comparison-percent">0.06%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:95.993534%"></div></div><span class="comparison-percent">15.36%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Microsoft<span class="comparison-year">IPO 1986</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.070830%"></div></div><span class="comparison-percent">0.01%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:70.054453%"></div></div><span class="comparison-percent">11.21%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Nvidia<span class="comparison-year">IPO 1999</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.014925%"></div></div><span class="comparison-percent">0.0024%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:66.646398%"></div></div><span class="comparison-percent">10.66%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Alphabet (Google)<span class="comparison-year">IPO 2004</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:1.176620%"></div></div><span class="comparison-percent">0.19%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:63.427680%"></div></div><span class="comparison-percent">10.15%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Amazon<span class="comparison-year">IPO 1997</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.031915%"></div></div><span class="comparison-percent">0.0051%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:52.635508%"></div></div><span class="comparison-percent">8.42%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">SpaceX<span class="comparison-year">IPO 2026</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:33.512535%"></div></div><span class="comparison-percent">5.36%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:35.595235%"></div></div><span class="comparison-percent">5.70%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Broadcom (Avago)<span class="comparison-year">IPO 2009</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.151091%"></div></div><span class="comparison-percent">0.02%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:31.240499%"></div></div><span class="comparison-percent">5.00%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">TSMC<span class="comparison-year">IPO 1994</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.343066%"></div></div><span class="comparison-percent">0.05%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:30.293817%"></div></div><span class="comparison-percent">4.85%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Meta (Facebook)<span class="comparison-year">IPO 2012</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:3.999023%"></div></div><span class="comparison-percent">0.64%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:28.779126%"></div></div><span class="comparison-percent">4.60%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Tesla<span class="comparison-year">IPO 2010</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:0.070603%"></div></div><span class="comparison-percent">0.01%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:28.021781%"></div></div><span class="comparison-percent">4.48%</span></div></div></div>
+<div class="comparison-row" role="listitem"><div class="comparison-name">Anthropic †<span class="comparison-year">IPO 2026</span></div><div class="comparison-pair"><div class="comparison-measure"><span>IPO</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar " style="width:28.400454%"></div></div><span class="comparison-percent">4.54%</span></div><div class="comparison-measure"><span>2026</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar current" style="width:24.235054%"></div></div><span class="comparison-percent">3.88%</span></div></div></div>
     </div>
     <p id="comparison-count" class="note" aria-live="polite">Showing 11 companies with current valuations of at least $1T, ranked by current GDP share. All 22 appear in the full table.</p>
     <p class="note">Current GDP proxy: <strong>$33.010T</strong>, Q3 2026 at a seasonally adjusted annual rate, released October 29. It is not a completed annual 2026 total. This proxy is also used for 2026 IPOs. <a href="https://fred.stlouisfed.org/data/GDP">BEA via FRED</a>.</p>
+    <p class="note gdp-note"><strong>† Anthropic’s share-count bases differ:</strong> its approximately $1.5T IPO figure is fully diluted, while the $1.28T snapshot market cap is based on outstanding shares. The fully diluted snapshot valuation is approximately $1.756T, or <strong>5.32% of GDP</strong>. The basic figure equals 3.88% of GDP. Comparing $1.5T directly with $1.28T does not measure shareholder performance. <a href="https://apnews.com/article/fdca56f1cda70c9908899057e7e591e6">Fully diluted valuation report</a>.</p>
     <p class="note">These are ratios of equity value to annual economic output, not shares of GDP produced by the companies. Established businesses and new IPOs are at different stages. Changes in these ratios are not investor returns, and differences in fully diluted versus outstanding share counts can affect the comparison.</p>
     <noscript><p>The chart displays the 11 trillion-dollar companies. All 22 current ratios are available in the table below.</p></noscript>
     <script>
@@ -121,7 +491,7 @@
       const escape = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
       function render() {
         const shown = companies.filter(company => view.value === 'all' || company.currentBillions >= 1000);
-        chart.innerHTML = shown.map(company => '<div class="comparison-row" role="listitem"><div class="comparison-name">' + escape(company.name === 'Anthropic (estimated)' ? 'Anthropic' : company.name) + '<span class="comparison-year">IPO ' + company.year + '</span></div><div class="comparison-pair">' + [['ipoShare','IPO',''],['currentShare','Today','current']].map(([key,label,style]) => '<div class="comparison-measure"><span>' + label + '</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar ' + style + '" style="width:' + (company[key] / 16 * 100).toFixed(6) + '%"></div></div><span class="comparison-percent">' + percent(company[key]) + '</span></div>').join('') + '</div></div>').join('');
+        chart.innerHTML = shown.map(company => '<div class="comparison-row" role="listitem"><div class="comparison-name">' + escape(company.name === 'Anthropic (estimated)' ? 'Anthropic †' : company.name) + '<span class="comparison-year">IPO ' + company.year + '</span></div><div class="comparison-pair">' + [['ipoShare','IPO',''],['currentShare','2026','current']].map(([key,label,style]) => '<div class="comparison-measure"><span>' + label + '</span><div class="comparison-track" aria-hidden="true"><div class="comparison-bar ' + style + '" style="width:' + (company[key] / 16 * 100).toFixed(6) + '%"></div></div><span class="comparison-percent">' + percent(company[key]) + '</span></div>').join('') + '</div></div>').join('');
         count.textContent = view.value === 'all' ? 'Showing all 22 companies, ranked by current GDP share.' : 'Showing 11 companies with current valuations of at least $1T, ranked by current GDP share. All 22 appear in the full table.';
       }
       view.addEventListener('change', render);
@@ -166,7 +536,7 @@
   </style>
   <p class="eyebrow">The company growth question</p>
   <h2 id="future-peer-title">What would it take to become tomorrow’s Apple, Google or Nvidia?</h2>
-  <p>Here the <strong>companies grow too</strong>. The target is to reach Apple’s, Google’s or Nvidia’s <strong>current valuation-to-GDP ratio</strong> in a larger future economy. This is a different question from letting GDP grow around a fixed IPO valuation.</p>
+  <p>This model estimates the company valuation growth required to match Apple’s, Google’s or Nvidia’s <strong>November 2026 valuation-to-GDP ratio</strong> in a larger future economy. It allows both company value and GDP to grow.</p>
   <div class="future-peer-controls">
     <div class="future-peer-field">
       <label for="future-peer-years">Time horizon: <output id="future-peer-years-value" for="future-peer-years">20 years · 2046</output></label>
@@ -177,8 +547,8 @@
       <input id="future-peer-gdp" type="range" min="0" max="8" step="0.5" value="5">
     </div>
   </div>
-  <p id="future-peer-context" class="future-peer-context" aria-live="polite">With 5.0% annual nominal GDP growth, the economy is 2.65× larger in 2046. Matching today’s Google/Nvidia scale requires about $9T of equity value; matching Apple requires about $13.5T.</p>
-  <p class="future-peer-note">Starting equity market caps: <strong>SpaceX $1.88T</strong> and <strong>Anthropic $1.28T</strong>. These are the saved November 19, 2026 market caps based on outstanding shares, rather than the supplied fully diluted IPO valuation estimates.</p>
+  <p id="future-peer-context" class="future-peer-context" aria-live="polite">With 5.0% annual nominal GDP growth, the economy is 2.65× larger in 2046. Matching the November 2026 Google/Nvidia scale requires about $9T of equity value; matching Apple requires about $13.5T.</p>
+  <p class="future-peer-note">Starting equity market caps: <strong>SpaceX $1.88T</strong> and <strong>Anthropic $1.28T</strong>. These are the saved November 19, 2026 market caps based on outstanding shares, which use a different share-count basis from fully diluted IPO valuations.</p>
   <p class="future-peer-axis-title">Required annual company valuation growth (%)</p>
   <div class="future-peer-legend"><span class="future-peer-key"><i class="future-peer-swatch" aria-hidden="true"></i>SpaceX</span><span class="future-peer-key"><i class="future-peer-swatch anthropic" aria-hidden="true"></i>Anthropic</span></div>
   <div class="future-peer-axis" aria-hidden="true"><span></span><div class="future-peer-measure"><span></span><span id="future-peer-ticks" class="future-peer-ticks"><span>0%</span><span>7.5%</span><span>15%</span></span><span></span></div></div>
@@ -189,13 +559,13 @@
   </div>
   <div class="future-peer-table-wrap">
     <table>
-      <caption id="future-peer-table-caption">Matching today’s economic scale in 2046</caption>
+      <caption id="future-peer-table-caption">Matching peers’ November 2026 economic scale in 2046</caption>
       <thead><tr><th scope="col">Peer benchmark</th><th scope="col">Current valuation / GDP</th><th scope="col">Future target valuation</th><th scope="col">SpaceX annual growth</th><th scope="col">Anthropic annual growth</th></tr></thead>
       <tbody id="future-peer-table-body"><tr><th scope="row">Google</th><td>10.15%</td><td>$8.89T</td><td>8.08%</td><td>10.17%</td></tr><tr><th scope="row">Nvidia</th><td>10.66%</td><td>$9.34T</td><td>8.34%</td><td>10.45%</td></tr><tr><th scope="row">Apple</th><td>15.36%</td><td>$13.45T</td><td>10.34%</td><td>12.48%</td></tr></tbody>
     </table>
   </div>
   <p class="future-peer-note"><strong>Valuation growth is not revenue growth, profit growth or shareholder return.</strong> These rates describe total equity value. Share issuance can increase market cap without equivalent gains per share. Nominal growth includes inflation.</p>
-  <details><summary>How this target is calculated</summary><p class="future-peer-note">Future target valuation = peer’s current market cap × (1 + nominal GDP growth)<sup>years</sup>. Required company growth = (future target ÷ company’s current market cap)<sup>1 / years</sup> − 1. This preserves the peer’s present economic footprint; it does not forecast the peer’s actual future market cap or imply fair value.</p></details>
+  <details><summary>How this target is calculated</summary><p class="future-peer-note">Future target valuation = peer’s snapshot market cap × (1 + nominal GDP growth)<sup>years</sup>. Required company growth = (future target ÷ company’s current market cap)<sup>1 / years</sup> − 1. This preserves the peer’s November 2026 economic footprint; it does not forecast the peer’s actual future market cap or imply fair value.</p></details>
   <p class="future-peer-note">Snapshot sources: <a href="https://stockanalysis.com/stocks/spcx/">SpaceX</a>, <a href="https://stockanalysis.com/stocks/ant/">Anthropic</a>, <a href="https://stockanalysis.com/stocks/aapl/">Apple</a>, <a href="https://stockanalysis.com/stocks/googl/">Alphabet/Google</a>, <a href="https://stockanalysis.com/stocks/nvda/">Nvidia</a>; GDP baseline <a href="https://fred.stlouisfed.org/data/GDP">BEA via FRED</a>, $33.010T at the Q3 2026 annualized rate. U.S. GDP is a consistent yardstick for globally operating businesses.</p>
   <noscript><p>These values use a 20-year horizon and 5% annual nominal GDP growth. Enable JavaScript to explore other assumptions.</p></noscript>
   <script>
@@ -214,12 +584,12 @@
       const series = peers.map(peer => ({...peer,targetBillions:peer.cap*multiple}));
       root.querySelector('#future-peer-years-value').textContent = years+' years · '+(2026+years);
       root.querySelector('#future-peer-gdp-value').textContent = (gdpGrowth*100).toFixed(1)+'%';
-      root.querySelector('#future-peer-context').textContent = 'With '+(gdpGrowth*100).toFixed(1)+'% annual nominal GDP growth, the economy is '+multiple.toFixed(2)+'× larger in '+(2026+years)+'. The target is the same company valuation/GDP ratio that each peer has today.';
+      root.querySelector('#future-peer-context').textContent = 'With '+(gdpGrowth*100).toFixed(1)+'% annual nominal GDP growth, the economy is '+multiple.toFixed(2)+'× larger in '+(2026+years)+'. The target is the same company valuation/GDP ratio that each peer has in the November 2026 snapshot.';
       const maxRate = Math.max(...series.flatMap(peer => companies.map(company => rate(peer.targetBillions,company.cap,years))));
       const axisMax = Math.max(5,Math.ceil(maxRate/5)*5);
       root.querySelector('#future-peer-ticks').innerHTML = '<span>0%</span><span>'+(axisMax/2)+'%</span><span>'+axisMax+'%</span>';
       root.querySelector('#future-peer-chart').innerHTML = series.map(peer => '<div class="future-peer-row" role="listitem"><span class="future-peer-name">'+peer.name+' scale</span><div class="future-peer-bars">'+companies.map(company => { const annual=rate(peer.targetBillions,company.cap,years); return '<div class="future-peer-measure"><span>'+company.name+'</span><div class="future-peer-track" aria-hidden="true"><div class="future-peer-bar '+company.style+'" style="width:'+(annual/axisMax*100).toFixed(6)+'%"></div></div><span class="future-peer-value">'+annual.toFixed(2)+'%</span></div>'; }).join('')+'</div></div>').join('');
-      root.querySelector('#future-peer-table-caption').textContent = 'Matching today’s economic scale in '+(2026+years);
+      root.querySelector('#future-peer-table-caption').textContent = 'Matching peers’ November 2026 economic scale in '+(2026+years);
       root.querySelector('#future-peer-table-body').innerHTML = series.map(peer => '<tr><th scope="row">'+peer.name+'</th><td>'+(peer.cap/currentGDP*100).toFixed(2)+'%</td><td>$'+(peer.targetBillions/1000).toFixed(2)+'T</td>'+companies.map(company=>'<td>'+rate(peer.targetBillions,company.cap,years).toFixed(2)+'%</td>').join('')+'</tr>').join('');
       if (typeof CustomEvent !== 'undefined' && typeof document.dispatchEvent === 'function') document.dispatchEvent(new CustomEvent('future-peer-change',{detail:{years,gdpGrowth,targets:series.map(peer=>({name:peer.name,targetBillions:peer.targetBillions})),currentGDP}}));
     }
@@ -254,7 +624,7 @@
   </style>
   <p class="eyebrow">From valuation to business performance</p>
   <h2 id="business-model-heading">What profits and revenue would support that valuation?</h2>
-  <p>This illustrative business scenario translates a future market capitalization into annual earnings and revenue, then calculates the revenue growth needed from today’s reported baseline. Choose a peer’s economic scale or enter a custom target. The time horizon and GDP growth follow the peer comparison above.</p>
+  <p>This illustrative business scenario translates a future market capitalization into annual earnings and revenue, then calculates the revenue growth needed from the reported November 2026 baseline. Choose a peer’s economic scale or enter a custom target. The time horizon and GDP growth follow the peer comparison above.</p>
   <p id="business-linked-assumptions" class="business-note">Linked scenario: 20 years to 2046, with 5% annual nominal GDP growth. Google-scale target: $8.889T.</p>
   <div class="business-controls">
     <div class="business-field"><label for="business-benchmark">Future economic scale</label><select id="business-benchmark"><option value="Google">Google</option><option value="Nvidia">Nvidia</option><option value="Apple">Apple</option><option value="Custom">Custom valuation</option></select><span class="business-hint">Peer’s present valuation / GDP ratio</span></div>
@@ -455,7 +825,7 @@
 
   <details id="economy-catchup" class="secondary-analysis">
     <summary>Alternative scenario: how much must GDP grow around a fixed IPO valuation?</summary>
-    <p class="note">This earlier model holds each IPO valuation fixed and lets the economy catch up to an older IPO/GDP ratio. The future-peer model above instead asks how the companies themselves would need to grow.</p>
+    <p class="note">This alternative model holds each IPO valuation fixed and lets the economy catch up to an older IPO/GDP ratio. The future-peer model above instead asks how the companies themselves would need to grow.</p>
   <section id="scenario" aria-labelledby="scenario-title">
   <style>
     #scenario { margin-top: 40px; }
@@ -598,11 +968,11 @@
   </details>
 
   <h2 id="full-comparison">Full valuation comparison</h2>
-  <p class="note">The last two columns compare economic scale at IPO and today: original IPO valuation ÷ IPO-year GDP, and current market capitalization ÷ current GDP. All current ratios use the same $33.010T GDP proxy. Neither ratio uses the inflation-adjusted column. GDP values are rounded for display, while ratios use the underlying figures. * Q3 2026 annualized GDP proxy.</p>
+  <p class="note">The last two columns compare economic scale at IPO and in the snapshot: original IPO valuation ÷ IPO-year GDP, and current market capitalization ÷ current GDP. All current ratios use the same $33.010T GDP proxy. Neither ratio uses the inflation-adjusted column. GDP values are rounded for display, while ratios use the underlying figures. * Q3 2026 annualized GDP proxy.</p>
   <div class="table-wrap">
     <table>
       <caption>All 22 IPOs: purchasing power, current valuation, and economic scale</caption>
-      <thead><tr><th scope="col">Year</th><th scope="col">Company</th><th scope="col">IPO Valuation</th><th scope="col">Inflation adjusted</th><th scope="col">Today’s Valuation</th><th scope="col">U.S. GDP in IPO year</th><th scope="col">IPO / IPO-year GDP</th><th scope="col">Current valuation / current GDP</th></tr></thead>
+      <thead><tr><th scope="col">Year</th><th scope="col">Company</th><th scope="col">IPO Valuation</th><th scope="col">Inflation adjusted</th><th scope="col">Market cap · Nov. 19, 2026</th><th scope="col">U.S. GDP in IPO year</th><th scope="col">IPO / IPO-year GDP</th><th scope="col">Current valuation / current GDP</th></tr></thead>
       <tbody>
         <tr><td>1970</td><td>Walmart</td><td>$12.4M</td><td>$108M</td><td><a href="https://stockanalysis.com/stocks/wmt/" title="Market capitalization source: Stock Analysis">$999.97B</a></td><td>$1.073T</td><td>0.0012%</td><td>3.0293%</td></tr>
         <tr><td>1980</td><td>Apple</td><td>$1.8B</td><td>$7.37B</td><td><a href="https://stockanalysis.com/stocks/aapl/" title="Market capitalization source: Stock Analysis">$5.07T</a></td><td>$2.857T</td><td>0.0630%</td><td>15.3590%</td></tr>
@@ -625,18 +995,18 @@
         <tr><td>2012</td><td>Meta (Facebook)</td><td>$104B</td><td>$152.9B</td><td><a href="https://stockanalysis.com/stocks/meta/" title="Market capitalization source: Stock Analysis">$1.52T</a></td><td>$16.254T</td><td>0.6398%</td><td>4.6047%</td></tr>
         <tr><td>2023</td><td>Arm Holdings</td><td>$54B</td><td>$59.8B</td><td><a href="https://stockanalysis.com/stocks/arm/" title="Market capitalization source: Stock Analysis">$189.57B</a></td><td>$27.826T</td><td>0.1941%</td><td>0.5743%</td></tr>
         <tr><td>2026</td><td>SpaceX</td><td>$1.77T</td><td>$1.77T</td><td><a href="https://stockanalysis.com/stocks/spcx/" title="Market capitalization source: Stock Analysis">$1.88T</a></td><td>$33.010T *</td><td>5.3620%</td><td>5.6952%</td></tr>
-        <tr><td>2026</td><td>Anthropic (estimated)</td><td>$1.5T</td><td>$1.5T</td><td><a href="https://stockanalysis.com/stocks/ant/" title="Market capitalization source: Stock Analysis">$1.28T</a></td><td>$33.010T *</td><td>4.5441%</td><td>3.8776%</td></tr>
+        <tr><td>2026</td><td>Anthropic †</td><td>$1.5T</td><td>$1.5T</td><td><a href="https://stockanalysis.com/stocks/ant/" title="Market capitalization source: Stock Analysis">$1.28T</a></td><td>$33.010T *</td><td>4.5441%</td><td>3.8776%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">Calculated as original amount × October 2026 CPI ÷ IPO-year annual-average CPI. The 2026 entries are left unchanged because the image gives no month. Historical averages come from the <a href="https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-">Minneapolis Fed</a>. M = million; B = billion; T = trillion.</p>
-  <p class="note"><em>This adjusts the supplied figures for inflation; it does not verify the image’s IPO dates or valuations. The IPO Valuation column preserves the supplied figures, including Anthropic’s estimate. Market capitalization uses outstanding shares; fully diluted IPO valuations can use a broader share count, so the two measures may differ.</em></p>
+  <p class="note">Calculated as original amount × October 2026 CPI ÷ IPO-year annual-average CPI. The 2026 reference values are treated as nominal 2026 dollars; no within-year CPI adjustment is applied. Historical averages come from the <a href="https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-">Minneapolis Fed</a>. M = million; B = billion; T = trillion.</p>
+  <p class="note"><em>Historical IPO valuations are approximate reference inputs whose definitions and share-count bases vary. Not every historical figure has been independently verified. Market capitalization uses outstanding shares; fully diluted IPO valuations can use a broader share count, so the two measures may differ.</em></p>
 
   <section aria-labelledby="method-heading">
     <h2 id="method-heading">Sources and interpretation</h2>
     <p class="note">Historical GDP: <a href="https://fred.stlouisfed.org/data/GDPA">BEA annual nominal GDP via FRED (GDPA)</a>. Current GDP proxy: <a href="https://fred.stlouisfed.org/data/GDP">BEA quarterly nominal GDP via FRED (GDP)</a>. Data snapshot: November 19, 2026. Values are current U.S. dollars.</p>
     <p class="note">U.S. GDP is a common yardstick for every row, including Taiwan-based TSMC and U.K.-based Arm; it is not their domestic economy or total addressable market. These companies can earn revenue worldwide. Valuation is a stock of equity value, while GDP is a flow of annual economic output.</p>
-    <p class="note gdp-note"><strong>GDP cannot establish fair value.</strong> This exercise compares relative economic size. Company cash flows, margins, market share, risk and discount rates determine investment value. The supplied IPO figures are retained and are not all independently verified.</p>
+    <p class="note gdp-note"><strong>GDP cannot establish fair value.</strong> This exercise compares relative economic size. Company cash flows, margins, market share, risk and discount rates determine investment value. Historical IPO inputs should be interpreted with their valuation-definition and share-count limitations.</p>
     <details><summary>Calculation methods</summary><ul class="formulas">
       <li>IPO / GDP (%) = original nominal IPO valuation ÷ same-year nominal GDP × 100.</li>
       <li>Current valuation / current GDP (%) = current equity market capitalization ÷ current GDP proxy × 100.</li>
