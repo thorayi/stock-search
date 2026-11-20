@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inflation-Adjusted IPO Valuations</title>
+  <title>IPO Valuations, Inflation &amp; GDP</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172033; background: #f3f5f8; }
     body { margin: 0; padding: 40px 20px; }
@@ -21,46 +21,239 @@
     td:last-child { font-weight: 700; color: #184a9b; }
     tbody tr:nth-child(even) { background: #f7f9fc; }
     .note { font-size: 14px; }
+    h2 { margin: 0 0 12px; font-size: clamp(23px, 3vw, 29px); line-height: 1.25; }
+    section { margin: 38px 0; }
+    .eyebrow { margin: 0 0 10px; color: #56667c; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .gdp-note { padding: 16px 20px; background: #f1f5fb; border-left: 3px solid #245ec7; }
+    .bars { display: grid; gap: 17px; margin-top: 24px; }
+    .bar-row { display: grid; grid-template-columns: 170px minmax(40px,1fr) 76px; align-items: center; gap: 14px; font-size: 15px; }
+    .bar-track { height: 24px; background: #f0f2f6; }
+    .bar { height: 100%; min-width: 2px; background: #8a99ad; }
+    .bar-recent { background: #245ec7; }
+    .bar-anthropic { background: #9b5700; }
+    .bar-value { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+    .bar-axis { display: grid; grid-template-columns: 170px 1fr 76px; gap: 14px; margin: 12px 0 0; font-size: 12px; color: #56667c; }
+    .bar-axis span { display: flex; justify-content: space-between; }
+    details { margin-top: 20px; }
+    summary { cursor: pointer; font-weight: 600; padding: 8px 0; }
+    .formulas { padding: 16px 22px; background: #f7f9fc; line-height: 1.7; }
+    .formulas li { margin: 8px 0; }
+    @media (max-width: 600px) { body { padding: 16px 10px; } main { border-radius: 10px; padding: 22px 16px; } .bar-row { grid-template-columns: 120px minmax(20px,1fr) 62px; gap: 8px; font-size: 12px; } .bar-axis { grid-template-columns: 120px 1fr 62px; gap: 8px; } }
+    @media (max-width: 370px) { .bar-row { grid-template-columns: 96px minmax(15px,1fr) 55px; gap: 6px; } .bar-axis { grid-template-columns: 96px 1fr 55px; gap: 6px; } }
+
     @media print { body { padding: 0; background: white; } main { box-shadow: none; padding: 0; } th, td { padding: 8px; } tr { break-inside: avoid; } }
   </style>
 </head>
 <body>
 <main>
-  <h1>Inflation-Adjusted IPO Valuations</h1>
+  <h1>IPO Valuations in Economic Context</h1>
   <p>The supplied image’s figures in <strong>today’s dollars</strong>, using October 2026 CPI—the latest available as of November 19, 2026. Amounts are approximate. <a href="https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm">Source: U.S. Bureau of Labor Statistics</a>.</p>
   <p><strong>Today’s Valuation</strong> is each company’s reported equity market capitalization at the November 19, 2026 U.S. market close, in U.S. dollars. Each current figure links to its Stock Analysis source. This is a saved snapshot, not a live feed.</p>
+
+  <section aria-labelledby="scale-heading">
+    <p class="eyebrow">A share of the economy</p>
+    <h2 id="scale-heading">How large were these IPOs relative to GDP?</h2>
+    <p>Divide each original IPO valuation by nominal U.S. GDP in its IPO year. SpaceX and Anthropic are compared with the five largest pre-2026 IPO/GDP ratios in this supplied list. Bar lengths use the same linear scale, starting at zero.</p>
+    <div class="bars" role="img" aria-label="IPO valuation as a percentage of U.S. GDP: SpaceX 5.36%, Anthropic 4.54%, Meta 0.64%, Visa 0.24%, Arm 0.19%, Google 0.19%, Apple 0.06%.">
+      <div class="bar-row"><span>SpaceX · 2026</span><div class="bar-track"><div class="bar bar-recent" style="width:89.366761%"></div></div><span class="bar-value">5.36%</span></div>
+      <div class="bar-row"><span>Anthropic · 2026</span><div class="bar-track"><div class="bar bar-anthropic" style="width:75.734543%"></div></div><span class="bar-value">4.54%</span></div>
+      <div class="bar-row"><span>Meta · 2012</span><div class="bar-track"><div class="bar " style="width:10.664061%"></div></div><span class="bar-value">0.64%</span></div>
+      <div class="bar-row"><span>Visa · 2008</span><div class="bar-track"><div class="bar " style="width:4.062326%"></div></div><span class="bar-value">0.24%</span></div>
+      <div class="bar-row"><span>Arm Holdings · 2023</span><div class="bar-track"><div class="bar " style="width:3.234398%"></div></div><span class="bar-value">0.19%</span></div>
+      <div class="bar-row"><span>Google · 2004</span><div class="bar-track"><div class="bar " style="width:3.137654%"></div></div><span class="bar-value">0.19%</span></div>
+      <div class="bar-row"><span>Apple · 1980</span><div class="bar-track"><div class="bar " style="width:1.049940%"></div></div><span class="bar-value">0.06%</span></div>
+    </div>
+    <div class="bar-axis" aria-hidden="true"><i></i><span><b>0%</b><b>3%</b><b>6%</b></span><i></i></div>
+    <p class="note">2026 GDP proxy: <strong>$33.010T</strong>, the Q3 2026 seasonally adjusted annual rate, released October 29. This is an annualized quarterly reading, not a completed 2026 annual total. <a href="https://fred.stlouisfed.org/data/GDP">BEA via FRED</a>.</p>
+  </section>
+  <section id="scenario" aria-labelledby="scenario-title">
+  <style>
+    #scenario { margin-top: 40px; }
+    #scenario h2 { margin-bottom: 12px; }
+    #scenario .scenario-controls { display:flex; flex-wrap:wrap; gap:20px 32px; margin:24px 0; }
+    #scenario .scenario-field { display:flex; flex-direction:column; gap:8px; flex:1 1 260px; min-width:0; }
+    #scenario label { font-weight:600; }
+    #scenario select { padding:10px; font:inherit; max-width:100%; background:white; color:inherit; border:1px solid #a7b0bf; border-radius:6px; }
+    #scenario input[type="range"] { width:100%; margin:8px 0; accent-color:#245ec7; }
+    #scenario .scenario-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin:20px 0; }
+    #scenario .scenario-metric { border-top:3px solid #245ec7; padding-top:12px; }
+    #scenario .scenario-metric:nth-child(2) { border-color:#9b5700; }
+    #scenario .scenario-metric h3 { margin:0 0 8px; font-size:18px; }
+    #scenario .scenario-number { display:block; font-size:28px; font-weight:700; margin:6px 0; font-variant-numeric:tabular-nums; }
+    #scenario .scenario-detail { display:block; color:#4b5567; line-height:1.6; }
+    #scenario .scenario-legend { display:flex; gap:20px; flex-wrap:wrap; font-size:14px; margin:16px 0 8px; }
+    #scenario .scenario-key { display:flex; align-items:center; gap:8px; }
+    #scenario .scenario-swatch { display:inline-block; width:24px; height:3px; background:#245ec7; }
+    #scenario .scenario-swatch.anthropic { height:0; background:none; border-top:3px dashed #9b5700; }
+    #scenario .scenario-swatch.reference { height:0; background:none; border-top:2px dashed #778292; }
+    #scenario .scenario-chart { width:100%; min-width:0; }
+    #scenario .scenario-chart svg { display:block; width:100%; overflow:visible; font-family:inherit; }
+    #scenario .scenario-table-wrap { overflow-x:auto; margin:20px 0; }
+    #scenario table { font-size:14px; }
+    #scenario table td, #scenario table th { text-align:right; }
+    #scenario table td:first-child, #scenario table th:first-child { text-align:left; }
+    #scenario .scenario-note { font-size:14px; }
+    @media(max-width:600px) { #scenario .scenario-metrics { grid-template-columns:1fr; } #scenario .scenario-number { font-size:25px; } }
+    @media print { #scenario .scenario-controls { break-inside:avoid; } #scenario .scenario-chart { break-inside:avoid; } }
+  </style>
+  <h2 id="scenario-title">What GDP growth would match an earlier IPO’s economic scale?</h2>
+  <p>This scenario holds the recent IPO valuations fixed and asks how quickly the U.S. economy would need to grow for those valuations to equal a selected historical IPO’s share of GDP. It measures relative scale; GDP growth alone does not justify a company’s valuation.</p>
+  <div class="scenario-controls">
+    <div class="scenario-field">
+      <label for="scenario-benchmark">Historical IPO benchmark</label>
+      <select id="scenario-benchmark">
+        <option value="meta">Meta, 2012 — largest earlier share in this list</option>
+        <option value="tsmc">TSMC, 1994</option>
+        <option value="visa">Visa, 2008</option>
+        <option value="google">Google, 2004</option>
+        <option value="arm">Arm, 2023</option>
+        <option value="apple">Apple, 1980</option>
+      </select>
+    </div>
+    <div class="scenario-field">
+      <label for="scenario-years">Years allowed from 2026: <output id="scenario-years-value" for="scenario-years">20 years (2046)</output></label>
+      <input id="scenario-years" type="range" min="5" max="50" step="1" value="20">
+    </div>
+  </div>
+  <p id="scenario-benchmark-detail" class="scenario-note">Meta’s $104B IPO was 0.6398% of 2012 U.S. GDP. Baseline GDP: $33.010T, Q3 2026 annualized.</p>
+  <div id="scenario-summary" class="scenario-metrics" aria-live="polite" aria-atomic="true">
+    <div class="scenario-metric"><h3>SpaceX · $1.77T IPO</h3><span class="scenario-number" id="scenario-spacex-rate">11.21% per year</span><span class="scenario-detail" id="scenario-spacex-detail">Required GDP: $276.63T · 8.38× current GDP</span></div>
+    <div class="scenario-metric"><h3>Anthropic · $1.50T IPO</h3><span class="scenario-number" id="scenario-anthropic-rate">10.30% per year</span><span class="scenario-detail" id="scenario-anthropic-detail">Required GDP: $234.43T · 7.10× current GDP</span></div>
+  </div>
+  <div class="scenario-legend" aria-label="Chart legend">
+    <span class="scenario-key"><span class="scenario-swatch" aria-hidden="true"></span>SpaceX</span>
+    <span class="scenario-key"><span class="scenario-swatch anthropic" aria-hidden="true"></span>Anthropic</span>
+    <span class="scenario-key"><span class="scenario-swatch reference" aria-hidden="true"></span>5% nominal growth, illustrative</span>
+  </div>
+  <div id="scenario-chart" class="scenario-chart"></div>
+  <div class="scenario-table-wrap">
+    <table>
+      <caption id="scenario-table-caption">Required annual nominal GDP growth — Meta benchmark</caption>
+      <thead><tr><th scope="col">IPO</th><th scope="col">10 years · 2036</th><th scope="col">20 years · 2046</th><th scope="col">30 years · 2056</th></tr></thead>
+      <tbody id="scenario-table-body"><tr><th scope="row">SpaceX</th><td>23.69%</td><td>11.21%</td><td>7.34%</td></tr><tr><th scope="row">Anthropic</th><td>21.66%</td><td>10.30%</td><td>6.75%</td></tr></tbody>
+    </table>
+  </div>
+  <p class="scenario-note">All rates are <strong>nominal GDP growth</strong>, including inflation. These are constant compound-growth scenarios, not forecasts. The chart holds the IPO valuations fixed while future GDP grows; it does not estimate future company values or returns. Company cash flows, margins, market share and discount rates also matter. U.S. GDP is a benchmark for globally operating businesses, and a company’s stock value differs from one year’s economic output.</p>
+  <noscript><p>The displayed values use Meta’s 2012 IPO as the benchmark. Enable JavaScript to change the benchmark and time horizon.</p></noscript>
+  <script>
+  (() => {
+    const root = document.getElementById('scenario');
+    const currentGDP = 33010.036;
+    const benchmarks = {
+      meta: { name: 'Meta', year: 2012, ipo: 104, gdp: 16253.970 },
+      tsmc: { name: 'TSMC', year: 1994, ipo: 4, gdp: 7287.236 },
+      visa: { name: 'Visa', year: 2008, ipo: 36, gdp: 14769.862 },
+      google: { name: 'Google', year: 2004, ipo: 23, gdp: 12217.196 },
+      arm: { name: 'Arm', year: 2023, ipo: 54, gdp: 27825.886 },
+      apple: { name: 'Apple', year: 1980, ipo: 1.8, gdp: 2857.307 }
+    };
+    const companies = [
+      { name: 'SpaceX', id: 'spacex', ipo: 1770, color: '#245ec7' },
+      { name: 'Anthropic', id: 'anthropic', ipo: 1500, color: '#9b5700' }
+    ];
+    const benchmarkInput = root.querySelector('#scenario-benchmark');
+    const yearsInput = root.querySelector('#scenario-years');
+    const chart = root.querySelector('#scenario-chart');
+    const rate = (requiredGDP, years) => Math.expm1(Math.log(requiredGDP / currentGDP) / years) * 100;
+    const pct = value => value.toFixed(2) + '%';
+    const trillions = value => '$' + (value / 1000).toFixed(2) + 'T';
+    function render() {
+      const benchmark = benchmarks[benchmarkInput.value];
+      const years = Number(yearsInput.value);
+      const share = benchmark.ipo / benchmark.gdp;
+      const series = companies.map(company => ({ ...company, requiredGDP: company.ipo / share }));
+      root.querySelector('#scenario-years-value').textContent = years + ' years (' + (2026 + years) + ')';
+      root.querySelector('#scenario-benchmark-detail').textContent = benchmark.name + '’s $' + benchmark.ipo + 'B IPO was ' + (share * 100).toFixed(4) + '% of ' + benchmark.year + ' U.S. GDP. Baseline GDP: $33.010T, Q3 2026 annualized.';
+      for (const company of series) {
+        root.querySelector('#scenario-' + company.id + '-rate').textContent = pct(rate(company.requiredGDP, years)) + ' per year';
+        root.querySelector('#scenario-' + company.id + '-detail').textContent = 'Required GDP: ' + trillions(company.requiredGDP) + ' · ' + (company.requiredGDP / currentGDP).toFixed(2) + '× current GDP';
+      }
+      root.querySelector('#scenario-table-caption').textContent = 'Required annual nominal GDP growth — ' + benchmark.name + ' benchmark';
+      root.querySelector('#scenario-table-body').innerHTML = series.map(company => '<tr><th scope="row">' + company.name + '</th>' + [10,20,30].map(year => '<td>' + pct(rate(company.requiredGDP, year)) + '</td>').join('') + '</tr>').join('');
+      const width = Math.max(240, chart.getBoundingClientRect().width || 800);
+      const height = width < 500 ? 350 : 400;
+      const margin = { left: 62, right: 18, top: 38, bottom: 58 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+      const maximum = Math.max(...series.map(company => rate(company.requiredGDP, 5)), 5);
+      const step = maximum > 100 ? 25 : maximum > 60 ? 20 : maximum > 30 ? 10 : 5;
+      const ymax = Math.ceil(maximum / step) * step;
+      const x = year => margin.left + (year - 5) / 45 * innerWidth;
+      const y = percent => margin.top + (1 - percent / ymax) * innerHeight;
+      const parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-labelledby="scenario-svg-title scenario-svg-desc"><title id="scenario-svg-title">Required annual nominal GDP growth versus years allowed</title><desc id="scenario-svg-desc">Two lines show the growth needed for the fixed SpaceX and Anthropic IPO valuations to match ' + benchmark.name + '’s historical IPO share of GDP. More years require less annual growth. Exact values for 10, 20 and 30 years follow in a table.</desc>'];
+      parts.push('<text x="' + margin.left + '" y="' + (width<500 ? 13 : 17) + '" fill="#4b5567" font-size="12">' + (width<500 ? '<tspan x="' + margin.left + '">Required annual nominal</tspan><tspan x="' + margin.left + '" dy="15">GDP growth (%)</tspan>' : 'Required annual nominal GDP growth (%)') + '</text>');
+      for (let tick = 0; tick <= ymax; tick += step) {
+        parts.push('<line x1="' + margin.left + '" x2="' + (width-margin.right) + '" y1="' + y(tick) + '" y2="' + y(tick) + '" stroke="#e1e5eb"/><text x="' + (margin.left-10) + '" y="' + (y(tick)+4) + '" fill="#4b5567" font-size="12" text-anchor="end">' + tick + '%</text>');
+      }
+      for (const tick of [5,10,20,30,40,50]) {
+        parts.push('<text x="' + x(tick) + '" y="' + (height-margin.bottom+23) + '" fill="#4b5567" font-size="12" text-anchor="middle">' + tick + '</text>');
+      }
+      parts.push('<text x="' + (margin.left+innerWidth/2) + '" y="' + (height-10) + '" fill="#4b5567" font-size="12" text-anchor="middle">Years of growth after 2026</text>');
+      parts.push('<line x1="' + margin.left + '" x2="' + (width-margin.right) + '" y1="' + y(5) + '" y2="' + y(5) + '" stroke="#778292" stroke-dasharray="5 4"/>');
+      parts.push('<line x1="' + x(years) + '" x2="' + x(years) + '" y1="' + margin.top + '" y2="' + (height-margin.bottom) + '" stroke="#a7b0bf" stroke-dasharray="3 4"/>');
+      for (const company of series) {
+        const points = Array.from({ length:181 }, (_, index) => { const year = 5 + index / 4; return x(year).toFixed(2) + ',' + y(rate(company.requiredGDP, year)).toFixed(2); }).join(' ');
+        parts.push('<polyline points="' + points + '" fill="none" stroke="' + company.color + '" stroke-width="2.5"' + (company.id==='anthropic' ? ' stroke-dasharray="7 4"' : '') + '/><circle cx="' + x(years) + '" cy="' + y(rate(company.requiredGDP, years)) + '" r="5" fill="' + company.color + '"><title>' + company.name + ': ' + pct(rate(company.requiredGDP, years)) + ' per year for ' + years + ' years</title></circle>');
+      }
+      parts.push('</svg>');
+      chart.innerHTML = parts.join('');
+    }
+    benchmarkInput.addEventListener('change', render);
+    yearsInput.addEventListener('input', render);
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(render).observe(chart);
+    render();
+  })();
+  </script>
+</section>
+
+  <h2>Full valuation comparison</h2>
+  <p class="note">The final column compares original nominal IPO values with GDP at the time; it does not use the inflation-adjusted values. GDP values are rounded for display, while ratios use the underlying figures. * Q3 2026 annualized GDP proxy.</p>
   <div class="table-wrap">
     <table>
-      <caption>IPO valuations and current market capitalizations</caption>
-      <thead><tr><th scope="col">Year</th><th scope="col">Company</th><th scope="col">IPO Valuation</th><th scope="col">Inflation adjusted</th><th scope="col">Today’s Valuation</th></tr></thead>
+      <caption>All 22 IPOs: purchasing power, current valuation, and economic scale</caption>
+      <thead><tr><th scope="col">Year</th><th scope="col">Company</th><th scope="col">IPO Valuation</th><th scope="col">Inflation adjusted</th><th scope="col">Today’s Valuation</th><th scope="col">U.S. GDP in IPO year</th><th scope="col">IPO / U.S. GDP</th></tr></thead>
       <tbody>
-        <tr><td>1970</td><td>Walmart</td><td>$12.4M</td><td>$108M</td><td><a href="https://stockanalysis.com/stocks/wmt/" title="Market capitalization source: Stock Analysis">$999.97B</a></td></tr>
-        <tr><td>1980</td><td>Apple</td><td>$1.8B</td><td>$7.37B</td><td><a href="https://stockanalysis.com/stocks/aapl/" title="Market capitalization source: Stock Analysis">$5.07T</a></td></tr>
-        <tr><td>1980</td><td>Nike</td><td>$400M</td><td>$1.64B</td><td><a href="https://stockanalysis.com/stocks/nke/" title="Market capitalization source: Stock Analysis">$50.99B</a></td></tr>
-        <tr><td>1981</td><td>Home Depot</td><td>$15M</td><td>$55.7M</td><td><a href="https://stockanalysis.com/stocks/hd/" title="Market capitalization source: Stock Analysis">$335.90B</a></td></tr>
-        <tr><td>1986</td><td>Microsoft</td><td>$519M</td><td>$1.60B</td><td><a href="https://stockanalysis.com/stocks/msft/" title="Market capitalization source: Stock Analysis">$3.70T</a></td></tr>
-        <tr><td>1986</td><td>Oracle</td><td>$270M</td><td>$831M</td><td><a href="https://stockanalysis.com/stocks/orcl/" title="Market capitalization source: Stock Analysis">$344.72B</a></td></tr>
-        <tr><td>1986</td><td>Adobe</td><td>$80M</td><td>$246M</td><td><a href="https://stockanalysis.com/stocks/adbe/" title="Market capitalization source: Stock Analysis">$86.28B</a></td></tr>
-        <tr><td>1990</td><td>Cisco Systems</td><td>$224M</td><td>$578M</td><td><a href="https://stockanalysis.com/stocks/csco/" title="Market capitalization source: Stock Analysis">$373.35B</a></td></tr>
-        <tr><td>1991</td><td>Qualcomm</td><td>$440M</td><td>$1.09B</td><td><a href="https://stockanalysis.com/stocks/qcom/" title="Market capitalization source: Stock Analysis">$173.35B</a></td></tr>
-        <tr><td>1992</td><td>Starbucks</td><td>$250M</td><td>$601M</td><td><a href="https://stockanalysis.com/stocks/sbux/" title="Market capitalization source: Stock Analysis">$119.11B</a></td></tr>
-        <tr><td>1992</td><td>Monster Beverage</td><td>$15M</td><td>$36.1M</td><td><a href="https://stockanalysis.com/stocks/mnst/" title="Market capitalization source: Stock Analysis">$86.01B</a></td></tr>
-        <tr><td>1994</td><td>TSMC</td><td>$4.0B</td><td>$9.11B</td><td><a href="https://stockanalysis.com/stocks/tsm/" title="Market capitalization source: Stock Analysis">$1.60T</a></td></tr>
-        <tr><td>1997</td><td>Amazon</td><td>$438M</td><td>$921M</td><td><a href="https://stockanalysis.com/stocks/amzn/" title="Market capitalization source: Stock Analysis">$2.78T</a></td></tr>
-        <tr><td>1999</td><td>Nvidia</td><td>$230M</td><td>$466M</td><td><a href="https://stockanalysis.com/stocks/nvda/" title="Market capitalization source: Stock Analysis">$3.52T</a></td></tr>
-        <tr><td>2004</td><td>Alphabet (Google)</td><td>$23B</td><td>$41.1B</td><td><a href="https://stockanalysis.com/stocks/googl/" title="Market capitalization source: Stock Analysis">$3.35T</a></td></tr>
-        <tr><td>2008</td><td>Visa</td><td>$36B</td><td>$56.4B</td><td><a href="https://stockanalysis.com/stocks/v/" title="Market capitalization source: Stock Analysis">$758.77B</a></td></tr>
-        <tr><td>2009</td><td>Broadcom (Avago)</td><td>$3.5B</td><td>$5.51B</td><td><a href="https://stockanalysis.com/stocks/avgo/" title="Market capitalization source: Stock Analysis">$1.65T</a></td></tr>
-        <tr><td>2010</td><td>Tesla</td><td>$1.7B</td><td>$2.63B</td><td><a href="https://stockanalysis.com/stocks/tsla/" title="Market capitalization source: Stock Analysis">$1.48T</a></td></tr>
-        <tr><td>2012</td><td>Meta (Facebook)</td><td>$104B</td><td>$152.9B</td><td><a href="https://stockanalysis.com/stocks/meta/" title="Market capitalization source: Stock Analysis">$1.52T</a></td></tr>
-        <tr><td>2023</td><td>Arm Holdings</td><td>$54B</td><td>$59.8B</td><td><a href="https://stockanalysis.com/stocks/arm/" title="Market capitalization source: Stock Analysis">$189.57B</a></td></tr>
-        <tr><td>2026</td><td>SpaceX</td><td>$1.77T</td><td>$1.77T</td><td><a href="https://stockanalysis.com/stocks/spcx/" title="Market capitalization source: Stock Analysis">$1.88T</a></td></tr>
-        <tr><td>2026</td><td>Anthropic (estimated)</td><td>$1.5T</td><td>$1.5T</td><td><a href="https://stockanalysis.com/stocks/ant/" title="Market capitalization source: Stock Analysis">$1.28T</a></td></tr>
+        <tr><td>1970</td><td>Walmart</td><td>$12.4M</td><td>$108M</td><td><a href="https://stockanalysis.com/stocks/wmt/" title="Market capitalization source: Stock Analysis">$999.97B</a></td><td>$1.073T</td><td>0.0012%</td></tr>
+        <tr><td>1980</td><td>Apple</td><td>$1.8B</td><td>$7.37B</td><td><a href="https://stockanalysis.com/stocks/aapl/" title="Market capitalization source: Stock Analysis">$5.07T</a></td><td>$2.857T</td><td>0.0630%</td></tr>
+        <tr><td>1980</td><td>Nike</td><td>$400M</td><td>$1.64B</td><td><a href="https://stockanalysis.com/stocks/nke/" title="Market capitalization source: Stock Analysis">$50.99B</a></td><td>$2.857T</td><td>0.0140%</td></tr>
+        <tr><td>1981</td><td>Home Depot</td><td>$15M</td><td>$55.7M</td><td><a href="https://stockanalysis.com/stocks/hd/" title="Market capitalization source: Stock Analysis">$335.90B</a></td><td>$3.207T</td><td>0.0005%</td></tr>
+        <tr><td>1986</td><td>Microsoft</td><td>$519M</td><td>$1.60B</td><td><a href="https://stockanalysis.com/stocks/msft/" title="Market capitalization source: Stock Analysis">$3.70T</a></td><td>$4.580T</td><td>0.0113%</td></tr>
+        <tr><td>1986</td><td>Oracle</td><td>$270M</td><td>$831M</td><td><a href="https://stockanalysis.com/stocks/orcl/" title="Market capitalization source: Stock Analysis">$344.72B</a></td><td>$4.580T</td><td>0.0059%</td></tr>
+        <tr><td>1986</td><td>Adobe</td><td>$80M</td><td>$246M</td><td><a href="https://stockanalysis.com/stocks/adbe/" title="Market capitalization source: Stock Analysis">$86.28B</a></td><td>$4.580T</td><td>0.0017%</td></tr>
+        <tr><td>1990</td><td>Cisco Systems</td><td>$224M</td><td>$578M</td><td><a href="https://stockanalysis.com/stocks/csco/" title="Market capitalization source: Stock Analysis">$373.35B</a></td><td>$5.963T</td><td>0.0038%</td></tr>
+        <tr><td>1991</td><td>Qualcomm</td><td>$440M</td><td>$1.09B</td><td><a href="https://stockanalysis.com/stocks/qcom/" title="Market capitalization source: Stock Analysis">$173.35B</a></td><td>$6.158T</td><td>0.0071%</td></tr>
+        <tr><td>1992</td><td>Starbucks</td><td>$250M</td><td>$601M</td><td><a href="https://stockanalysis.com/stocks/sbux/" title="Market capitalization source: Stock Analysis">$119.11B</a></td><td>$6.520T</td><td>0.0038%</td></tr>
+        <tr><td>1992</td><td>Monster Beverage</td><td>$15M</td><td>$36.1M</td><td><a href="https://stockanalysis.com/stocks/mnst/" title="Market capitalization source: Stock Analysis">$86.01B</a></td><td>$6.520T</td><td>0.0002%</td></tr>
+        <tr><td>1994</td><td>TSMC</td><td>$4.0B</td><td>$9.11B</td><td><a href="https://stockanalysis.com/stocks/tsm/" title="Market capitalization source: Stock Analysis">$1.60T</a></td><td>$7.287T</td><td>0.0549%</td></tr>
+        <tr><td>1997</td><td>Amazon</td><td>$438M</td><td>$921M</td><td><a href="https://stockanalysis.com/stocks/amzn/" title="Market capitalization source: Stock Analysis">$2.78T</a></td><td>$8.578T</td><td>0.0051%</td></tr>
+        <tr><td>1999</td><td>Nvidia</td><td>$230M</td><td>$466M</td><td><a href="https://stockanalysis.com/stocks/nvda/" title="Market capitalization source: Stock Analysis">$3.52T</a></td><td>$9.631T</td><td>0.0024%</td></tr>
+        <tr><td>2004</td><td>Alphabet (Google)</td><td>$23B</td><td>$41.1B</td><td><a href="https://stockanalysis.com/stocks/googl/" title="Market capitalization source: Stock Analysis">$3.35T</a></td><td>$12.217T</td><td>0.1883%</td></tr>
+        <tr><td>2008</td><td>Visa</td><td>$36B</td><td>$56.4B</td><td><a href="https://stockanalysis.com/stocks/v/" title="Market capitalization source: Stock Analysis">$758.77B</a></td><td>$14.770T</td><td>0.2437%</td></tr>
+        <tr><td>2009</td><td>Broadcom (Avago)</td><td>$3.5B</td><td>$5.51B</td><td><a href="https://stockanalysis.com/stocks/avgo/" title="Market capitalization source: Stock Analysis">$1.65T</a></td><td>$14.478T</td><td>0.0242%</td></tr>
+        <tr><td>2010</td><td>Tesla</td><td>$1.7B</td><td>$2.63B</td><td><a href="https://stockanalysis.com/stocks/tsla/" title="Market capitalization source: Stock Analysis">$1.48T</a></td><td>$15.049T</td><td>0.0113%</td></tr>
+        <tr><td>2012</td><td>Meta (Facebook)</td><td>$104B</td><td>$152.9B</td><td><a href="https://stockanalysis.com/stocks/meta/" title="Market capitalization source: Stock Analysis">$1.52T</a></td><td>$16.254T</td><td>0.6398%</td></tr>
+        <tr><td>2023</td><td>Arm Holdings</td><td>$54B</td><td>$59.8B</td><td><a href="https://stockanalysis.com/stocks/arm/" title="Market capitalization source: Stock Analysis">$189.57B</a></td><td>$27.826T</td><td>0.1941%</td></tr>
+        <tr><td>2026</td><td>SpaceX</td><td>$1.77T</td><td>$1.77T</td><td><a href="https://stockanalysis.com/stocks/spcx/" title="Market capitalization source: Stock Analysis">$1.88T</a></td><td>$33.010T *</td><td>5.3620%</td></tr>
+        <tr><td>2026</td><td>Anthropic (estimated)</td><td>$1.5T</td><td>$1.5T</td><td><a href="https://stockanalysis.com/stocks/ant/" title="Market capitalization source: Stock Analysis">$1.28T</a></td><td>$33.010T *</td><td>4.5441%</td></tr>
       </tbody>
     </table>
   </div>
   <p class="note">Calculated as original amount × October 2026 CPI ÷ IPO-year annual-average CPI. The 2026 entries are left unchanged because the image gives no month. Historical averages come from the <a href="https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-">Minneapolis Fed</a>. M = million; B = billion; T = trillion.</p>
   <p class="note"><em>This adjusts the supplied figures for inflation; it does not verify the image’s IPO dates or valuations. The IPO Valuation column preserves the supplied figures, including Anthropic’s estimate. Market capitalization uses outstanding shares; fully diluted IPO valuations can use a broader share count, so the two measures may differ.</em></p>
+
+  <section aria-labelledby="method-heading">
+    <h2 id="method-heading">Sources and interpretation</h2>
+    <p class="note">Historical GDP: <a href="https://fred.stlouisfed.org/data/GDPA">BEA annual nominal GDP via FRED (GDPA)</a>. Current GDP proxy: <a href="https://fred.stlouisfed.org/data/GDP">BEA quarterly nominal GDP via FRED (GDP)</a>. Data snapshot: November 19, 2026. Values are current U.S. dollars.</p>
+    <p class="note">U.S. GDP is a common yardstick for every row, including Taiwan-based TSMC and U.K.-based Arm; it is not their domestic economy or total addressable market. These companies can earn revenue worldwide. Valuation is a stock of equity value, while GDP is a flow of annual economic output.</p>
+    <p class="note gdp-note"><strong>GDP cannot establish fair value.</strong> This exercise compares relative economic size. Company cash flows, margins, market share, risk and discount rates determine investment value. The supplied IPO figures are retained and are not all independently verified.</p>
+    <details><summary>Calculation methods</summary><ul class="formulas">
+      <li>IPO / GDP (%) = original nominal IPO valuation ÷ same-year nominal GDP × 100.</li>
+      <li>Required GDP = recent IPO valuation ÷ historical benchmark’s IPO/GDP ratio (as a decimal).</li>
+      <li>GDP multiple = required GDP ÷ current GDP proxy.</li>
+      <li>Required annual nominal growth = (GDP multiple)<sup>1 / years</sup> − 1.</li>
+      <li>The scenario holds each recent IPO’s dollar valuation fixed as GDP grows. It does not project company growth, future IPO values or stock returns. Nominal GDP growth includes inflation; it is not real GDP growth.</li>
+    </ul></details>
+  </section>
 </main>
 </body>
 </html>
